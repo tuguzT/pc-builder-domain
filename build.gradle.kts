@@ -1,3 +1,5 @@
+@file:Suppress("GradlePackageUpdate")
+
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -5,7 +7,7 @@ plugins {
 }
 
 group = "io.github.tuguzt.pcbuilder.domain"
-version = "0.0.1"
+version = "0.0.1-SNAPSHOT"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
