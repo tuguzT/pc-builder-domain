@@ -7,6 +7,6 @@ import io.nacular.measured.units.div
 /**
  * Represents quantity of voltage.
  */
-typealias Voltage = UnitsRatio<Power, Electricity>
+public typealias Voltage = UnitsRatio<Power, Electricity>
 
-val volt: Voltage = watt / ampere
+public val volt: Voltage = watt / ampere

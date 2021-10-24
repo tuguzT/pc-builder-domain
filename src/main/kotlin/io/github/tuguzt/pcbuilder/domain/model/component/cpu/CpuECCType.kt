@@ -6,7 +6,7 @@ package io.github.tuguzt.pcbuilder.domain.model.component.cpu
  *
  * @see CentralProcessingUnit
  */
-enum class CpuECCType {
+public enum class CpuECCType {
     ECC,
     NonECC,
 }

@@ -20,17 +20,17 @@ import io.github.tuguzt.pcbuilder.domain.model.component.storage.Storage
  *
  * @see Component
  */
-interface Build : Identifiable<String> {
-    val name: String
-    val case: Case?
-    val cooler: Cooler?
-    val centralProcessingUnit: CentralProcessingUnit?
-    val graphicsProcessingUnit: GraphicsProcessingUnit?
-    val memory: Memory?
-    val monitor: Monitor?
-    val motherboard: Motherboard?
-    val powerSupplyUnit: PowerSupplyUnit?
-    val storage: Storage?
+public interface Build : Identifiable<String> {
+    public val name: String
+    public val case: Case?
+    public val cooler: Cooler?
+    public val centralProcessingUnit: CentralProcessingUnit?
+    public val graphicsProcessingUnit: GraphicsProcessingUnit?
+    public val memory: Memory?
+    public val monitor: Monitor?
+    public val motherboard: Motherboard?
+    public val powerSupplyUnit: PowerSupplyUnit?
+    public val storage: Storage?
 }
 
 /**
@@ -38,18 +38,18 @@ interface Build : Identifiable<String> {
  *
  * @see CPU
  */
-inline val Build.cpu: CPU? get() = centralProcessingUnit
+public inline val Build.cpu: CPU? get() = centralProcessingUnit
 
 /**
  * Shorthand for [Build.graphicsProcessingUnit].
  *
  * @see GPU
  */
-inline val Build.gpu: GPU? get() = graphicsProcessingUnit
+public inline val Build.gpu: GPU? get() = graphicsProcessingUnit
 
 /**
  * Shorthand for [Build.powerSupplyUnit].
  *
  * @see PSU
  */
-inline val Build.psu: PSU? get() = powerSupplyUnit
+public inline val Build.psu: PSU? get() = powerSupplyUnit

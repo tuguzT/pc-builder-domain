@@ -7,7 +7,7 @@ import io.github.tuguzt.pcbuilder.domain.model.component.Component
  *
  * @see PSU
  */
-interface PowerSupplyUnit : Component {
+public interface PowerSupplyUnit : Component {
     // todo
 }
 
@@ -16,4 +16,4 @@ interface PowerSupplyUnit : Component {
  *
  * @see PowerSupplyUnit
  */
-typealias PSU = PowerSupplyUnit
+public typealias PSU = PowerSupplyUnit

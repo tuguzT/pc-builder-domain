@@ -5,8 +5,8 @@ import io.nacular.measured.units.Units
 /**
  * Represents quantity of electric current.
  */
-class Electricity(suffix: String, ratio: Double = 1.0) : Units(suffix, ratio) {
-    companion object {
-        val ampere = Electricity("A")
+public class Electricity(suffix: String, ratio: Double = 1.0) : Units(suffix, ratio) {
+    public companion object {
+        public val ampere: Electricity = Electricity("A")
     }
 }

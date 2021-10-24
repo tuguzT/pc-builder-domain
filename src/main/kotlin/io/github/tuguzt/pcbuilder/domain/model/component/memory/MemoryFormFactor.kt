@@ -5,15 +5,15 @@ package io.github.tuguzt.pcbuilder.domain.model.component.memory
  *
  * @see Memory
  */
-sealed class MemoryFormFactor {
+public sealed class MemoryFormFactor {
     /** Dual In-line Memory Module */
-    class DIMM(val pins: Pins) : MemoryFormFactor() {
+    public class DIMM(public val pins: Pins) : MemoryFormFactor() {
         /**
          * Enum represents possible count of pins for `DIMM` memory form factor.
          *
          * @see DIMM
          */
-        enum class Pins(val count: UInt) {
+        public enum class Pins(public val count: UInt) {
             PINS_100(100u),
             PINS_168(168u),
             PINS_184(184u),
@@ -27,13 +27,13 @@ sealed class MemoryFormFactor {
      *
      * @see DIMM
      */
-    class SmallOutlineDIMM(val pins: Pins) : MemoryFormFactor() {
+    public class SmallOutlineDIMM(public val pins: Pins) : MemoryFormFactor() {
         /**
          * Enum represents possible count of pins for `SO-DIMM` memory form factor.
          *
          * @see SmallOutlineDIMM
          */
-        enum class Pins(val count: UInt) {
+        public enum class Pins(public val count: UInt) {
             PINS_100(100u),
             PINS_144(144u),
             PINS_200(200u),

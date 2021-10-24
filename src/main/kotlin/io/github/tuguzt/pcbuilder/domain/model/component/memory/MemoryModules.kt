@@ -8,4 +8,4 @@ import io.nacular.measured.units.Measure
  *
  * @see Memory
  */
-data class MemoryModules(val count: UInt, val capacity: Measure<BinarySize>)
+public data class MemoryModules(val count: UInt, val capacity: Measure<BinarySize>)

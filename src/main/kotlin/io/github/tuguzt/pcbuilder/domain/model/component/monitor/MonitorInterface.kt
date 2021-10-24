@@ -5,7 +5,7 @@ package io.github.tuguzt.pcbuilder.domain.model.component.monitor
  *
  * @see Monitor
  */
-enum class MonitorInterface {
+public enum class MonitorInterface {
     /** High Definition Multimedia Interface */
     HDMI,
 

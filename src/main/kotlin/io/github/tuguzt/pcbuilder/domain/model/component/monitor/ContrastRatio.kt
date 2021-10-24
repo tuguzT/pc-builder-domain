@@ -5,6 +5,6 @@ package io.github.tuguzt.pcbuilder.domain.model.component.monitor
  *
  * @see Monitor
  */
-data class ContrastRatio(val higherLuminance: UInt, val lowerLuminance: UInt) {
-    override fun toString() = "$higherLuminance:$lowerLuminance"
+public data class ContrastRatio(val higherLuminance: UInt, val lowerLuminance: UInt) {
+    override fun toString(): String = "$higherLuminance:$lowerLuminance"
 }

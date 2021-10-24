@@ -5,6 +5,6 @@ import io.github.tuguzt.pcbuilder.domain.model.component.Component
 /**
  * Interface for all monitors of PC.
  */
-interface Monitor : Component {
+public interface Monitor : Component {
     // todo
 }

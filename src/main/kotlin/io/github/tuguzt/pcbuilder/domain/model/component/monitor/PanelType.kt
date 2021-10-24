@@ -5,7 +5,7 @@ package io.github.tuguzt.pcbuilder.domain.model.component.monitor
  *
  * @see Monitor
  */
-enum class PanelType {
+public enum class PanelType {
     /** Twisted Nematic */
     TN,
 

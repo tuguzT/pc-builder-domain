@@ -7,7 +7,7 @@ import io.github.tuguzt.pcbuilder.domain.model.component.Component
  *
  * @see GPU
  */
-interface GraphicsProcessingUnit : Component {
+public interface GraphicsProcessingUnit : Component {
     // todo
 }
 
@@ -16,4 +16,4 @@ interface GraphicsProcessingUnit : Component {
  *
  * @see GraphicsProcessingUnit
  */
-typealias GPU = GraphicsProcessingUnit
+public typealias GPU = GraphicsProcessingUnit

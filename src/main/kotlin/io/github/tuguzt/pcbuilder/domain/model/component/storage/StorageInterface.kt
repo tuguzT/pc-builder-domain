@@ -5,7 +5,7 @@ package io.github.tuguzt.pcbuilder.domain.model.component.storage
  *
  * @see Storage
  */
-enum class StorageInterface {
+public enum class StorageInterface {
     /** Serial Attached SCSI (Small Computer System Interface) */
     SAS,
 

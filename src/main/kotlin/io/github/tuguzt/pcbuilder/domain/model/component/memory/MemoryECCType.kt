@@ -6,7 +6,7 @@ package io.github.tuguzt.pcbuilder.domain.model.component.memory
  *
  * @see Memory
  */
-enum class MemoryECCType {
+public enum class MemoryECCType {
     ECC,
     NonECC,
 }

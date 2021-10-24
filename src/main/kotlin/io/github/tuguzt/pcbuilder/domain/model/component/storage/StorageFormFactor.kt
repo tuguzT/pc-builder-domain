@@ -5,7 +5,7 @@ package io.github.tuguzt.pcbuilder.domain.model.component.storage
  *
  * @see Storage
  */
-enum class StorageFormFactor {
+public enum class StorageFormFactor {
     /** 1.8" */
     INCH_1_8,
 

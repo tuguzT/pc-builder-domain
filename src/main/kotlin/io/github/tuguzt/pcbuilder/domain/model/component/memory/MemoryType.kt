@@ -5,7 +5,7 @@ package io.github.tuguzt.pcbuilder.domain.model.component.memory
  *
  * @see Memory
  */
-enum class MemoryType {
+public enum class MemoryType {
     /** Synchronous DRAM (Dynamic RAM) */
     SDRAM,
 

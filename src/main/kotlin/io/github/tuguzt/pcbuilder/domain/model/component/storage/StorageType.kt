@@ -5,16 +5,16 @@ package io.github.tuguzt.pcbuilder.domain.model.component.storage
  *
  * @see Storage
  */
-sealed class StorageType {
+public sealed class StorageType {
     /** Hard Disk Drive */
-    data class HDD(val revolutionsPerMinute: UInt) : StorageType() {
+    public data class HDD(val revolutionsPerMinute: UInt) : StorageType() {
         init {
             require(revolutionsPerMinute > 0u) { "RPM of HDD must be greater than 0" }
         }
     }
 
     /** Solid-State Drive */
-    class SSD(val hasNVMe: Boolean) : StorageType()
+    public class SSD(public val hasNVMe: Boolean) : StorageType()
 
     /**
      * Dual-drive hybrid systems or solid-state hybrid drives (SSHD)
@@ -22,5 +22,5 @@ sealed class StorageType {
      * @see HDD
      * @see SSD
      */
-    object Hybrid : StorageType()
+    public object Hybrid : StorageType()
 }

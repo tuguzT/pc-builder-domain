@@ -8,6 +8,6 @@ import io.nacular.measured.units.div
 /**
  * Represents quantity of frequency.
  */
-typealias Frequency = InverseUnits<Time>
+public typealias Frequency = InverseUnits<Time>
 
-val hertz: Frequency = (1 / seconds).units
+public val hertz: Frequency = (1 / seconds).units

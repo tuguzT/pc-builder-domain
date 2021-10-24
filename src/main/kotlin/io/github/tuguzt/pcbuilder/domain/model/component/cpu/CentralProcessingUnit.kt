@@ -7,7 +7,7 @@ import io.github.tuguzt.pcbuilder.domain.model.component.Component
  *
  * @see CPU
  */
-interface CentralProcessingUnit : Component {
+public interface CentralProcessingUnit : Component {
     // todo
 }
 
@@ -16,4 +16,4 @@ interface CentralProcessingUnit : Component {
  *
  * @see CentralProcessingUnit
  */
-typealias CPU = CentralProcessingUnit
+public typealias CPU = CentralProcessingUnit

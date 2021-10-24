@@ -8,6 +8,6 @@ import io.nacular.measured.units.Time.Companion.seconds
 /**
  * Represents quantity of power.
  */
-typealias Power = UnitsRatio<UnitsProduct<Mass, Square<Length>>, UnitsProduct<Square<Time>, Time>>
+public typealias Power = UnitsRatio<UnitsProduct<Mass, Square<Length>>, UnitsProduct<Square<Time>, Time>>
 
-val watt: Power = kilograms * (meters * meters) / (seconds * seconds * seconds)
+public val watt: Power = kilograms * (meters * meters) / (seconds * seconds * seconds)

@@ -6,7 +6,7 @@ package io.github.tuguzt.pcbuilder.domain.model.component.memory
  *
  * @see Memory
  */
-enum class MemoryRegisterType {
+public enum class MemoryRegisterType {
     Registered,
     Unbuffered,
 }

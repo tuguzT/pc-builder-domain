@@ -5,7 +5,7 @@ package io.github.tuguzt.pcbuilder.domain.model.component.monitor
  *
  * @see Monitor
  */
-enum class FrameSyncType {
+public enum class FrameSyncType {
     /**
      * Announced by `AMD` to compete against `Nvidia`'s proprietary `G-Sync`.
      *

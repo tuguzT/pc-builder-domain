@@ -5,6 +5,6 @@ import io.github.tuguzt.pcbuilder.domain.model.component.Component
 /**
  * Interface for all cases of PC.
  */
-interface Case : Component {
+public interface Case : Component {
     // todo
 }
