@@ -7,7 +7,7 @@ plugins {
     id("maven-publish")
 }
 
-group = "io.github.tuguzt.pcbuilder.domain"
+group = "com.github.tuguzT"
 version = "0.0.1-SNAPSHOT"
 
 java {
