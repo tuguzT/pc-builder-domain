@@ -9,7 +9,6 @@ plugins {
 }
 
 group = "io.github.tuguzt.pcbuilder.domain"
-version = "0.1.0"
 
 repositories {
     mavenCentral()
