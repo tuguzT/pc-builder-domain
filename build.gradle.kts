@@ -3,13 +3,13 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.5.31"
     `java-library`
-    id("maven-publish")
+    `maven-publish`
+    kotlin("jvm") version "1.5.31"
 }
 
-group = "com.github.tuguzT"
-version = "0.0.1-SNAPSHOT"
+group = "io.github.tuguzt.pcbuilder.domain"
+version = "0.1.0"
 
 repositories {
     mavenCentral()
@@ -40,4 +40,13 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("jitpack") {
+            groupId = "com.github.tuguzT"
+            artifactId = "pc_builder_domain"
+        }
+    }
 }
