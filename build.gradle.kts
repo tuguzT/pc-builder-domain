@@ -46,6 +46,8 @@ publishing {
         create<MavenPublication>("jitpack") {
             groupId = "com.github.tuguzT"
             artifactId = "pc_builder_domain"
+
+            from(components["kotlin"])
         }
     }
 }
