@@ -28,7 +28,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
 
     // Third-Party
-    implementation("io.nacular.measured:measured:0.3.0")
+    api("io.nacular.measured:measured:0.3.0")
 }
 
 tasks.withType<KotlinCompile> {
