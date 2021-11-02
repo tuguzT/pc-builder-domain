@@ -30,6 +30,9 @@ dependencies {
     // Third-Party
     api("io.nacular.measured:measured:0.3.0")
     api("com.aventrix.jnanoid:jnanoid:2.0.0")
+
+    // Tests
+    testImplementation(kotlin("test"))
 }
 
 tasks.withType<KotlinCompile> {
