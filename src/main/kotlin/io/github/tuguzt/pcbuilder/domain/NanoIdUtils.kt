@@ -8,7 +8,8 @@ import java.util.*
  *
  * @see NanoIdUtils.randomNanoId
  */
-public fun randomNanoId(
+@Suppress("NOTHING_TO_INLINE")
+public inline fun randomNanoId(
     random: Random = defaultNumberGenerator,
     alphabet: CharArray = defaultAlphabet,
     size: Int = defaultSize,

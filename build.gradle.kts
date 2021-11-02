@@ -31,7 +31,7 @@ dependencies {
     api("io.nacular.measured:measured:0.3.0")
     api("com.aventrix.jnanoid:jnanoid:2.0.0")
 
-    // Tests
+    // Testing
     testImplementation(kotlin("test"))
 }
 
