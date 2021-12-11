@@ -6,7 +6,7 @@ package io.github.tuguzt.pcbuilder.domain.interactor
  * Checks if the provided [username] meets all requirements of the module.
  *
  * Requirements are:
- * - must be from 8 to 20 characters in length
+ * - must be from 4 to 32 characters in length
  * - must contain latin or `-`, `_`, `.` characters
  * - must not start or end with `-`, `_`, `.` characters
  * - `-`, `_`, `.` characters can't be next to each other
