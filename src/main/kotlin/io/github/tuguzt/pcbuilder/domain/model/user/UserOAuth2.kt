@@ -5,6 +5,6 @@ package io.github.tuguzt.pcbuilder.domain.model.user
  *
  * @see User
  */
-public interface UserOAuth2 : User {
-    public val accessToken: String
+public interface UserOAuth2 : User, UserToken {
+    public override val accessToken: String
 }
