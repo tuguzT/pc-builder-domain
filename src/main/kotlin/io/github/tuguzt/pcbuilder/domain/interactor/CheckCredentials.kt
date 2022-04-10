@@ -12,7 +12,7 @@ package io.github.tuguzt.pcbuilder.domain.interactor
  * - `-`, `_`, `.` characters can't be next to each other
  * - `-`, `_`, `.` characters can't be used multiple times in a row
  */
-public fun checkUsername(username: String): Boolean = usernameRegex.matches(username)
+public fun checkUsername(username: String): Boolean = usernameRegex matches username
 
 private val usernameRegex = Regex("^(?=.{4,32}\$)(?![-_.])(?!.*[-_.]{2})[a-zA-Z0-9-_.]+(?<![-_.])\$")
 
@@ -26,6 +26,6 @@ private val usernameRegex = Regex("^(?=.{4,32}\$)(?![-_.])(?!.*[-_.]{2})[a-zA-Z0
  * - must contain at least one digit
  * - must contain at least one special character: `(`, `)`, `#`, `?`, `!`, `@`, `$`, `%`, `^`, `&`, `*`, `_`, or `-`
  */
-public fun checkPassword(password: String): Boolean = passwordRegex.matches(password)
+public fun checkPassword(password: String): Boolean = passwordRegex matches password
 
 private val passwordRegex = Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?\\d)(?=.*?[()#?!@$%^&*_-]).{8,}\$")

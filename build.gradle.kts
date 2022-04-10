@@ -5,7 +5,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     `java-library`
     `maven-publish`
-    kotlin("jvm") version "1.6.0"
+    kotlin("jvm") version "1.6.20"
 }
 
 group = "io.github.tuguzt.pcbuilder.domain"

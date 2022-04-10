@@ -1,7 +1,9 @@
 package io.github.tuguzt.pcbuilder.domain
 
 import com.aventrix.jnanoid.jnanoid.NanoIdUtils
-import java.util.*
+import kotlin.random.Random
+import kotlin.random.asJavaRandom
+import kotlin.random.asKotlinRandom
 
 /**
  * Utility function for default NanoID generation.
@@ -13,13 +15,13 @@ public inline fun randomNanoId(
     random: Random = defaultNumberGenerator,
     alphabet: CharArray = defaultAlphabet,
     size: Int = defaultSize,
-): String = NanoIdUtils.randomNanoId(random, alphabet, size)
+): String = NanoIdUtils.randomNanoId(random.asJavaRandom(), alphabet, size)
 
 /**
  * The default random number generator for NanoID used by this module.
  * Creates cryptographically strong NanoId Strings.
  */
-public inline val defaultNumberGenerator: Random get() = NanoIdUtils.DEFAULT_NUMBER_GENERATOR
+public inline val defaultNumberGenerator: Random get() = NanoIdUtils.DEFAULT_NUMBER_GENERATOR.asKotlinRandom()
 
 /**
  * The default alphabet for NanoID used by this module.
