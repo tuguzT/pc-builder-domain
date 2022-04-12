@@ -5,7 +5,4 @@ package io.github.tuguzt.pcbuilder.domain.model.user
  *
  * @see User
  */
-public interface UserNamePassword : User, UserCredentials {
-    public override val username: String
-    public override val password: String
-}
+public interface UserNamePassword : User, UserCredentials

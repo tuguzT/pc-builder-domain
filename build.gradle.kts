@@ -29,7 +29,7 @@ dependencies {
 
     // Third-Party
     api("io.nacular.measured:measured:0.3.0")
-    api("com.aventrix.jnanoid:jnanoid:2.0.0")
+    implementation("com.aventrix.jnanoid:jnanoid:2.0.0")
 
     // Testing
     testImplementation(kotlin("test"))
