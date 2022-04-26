@@ -5,7 +5,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     `java-library`
     `maven-publish`
-    kotlin("jvm") version "1.6.20"
+    kotlin("jvm") version "1.6.21"
+    kotlin("plugin.serialization") version "1.6.21"
 }
 
 group = "io.github.tuguzt.pcbuilder.domain"
@@ -26,9 +27,10 @@ kotlin {
 dependencies {
     // Kotlin
     implementation(kotlin("stdlib-jdk8"))
+    api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
 
     // Third-Party
-    api("io.nacular.measured:measured:0.3.0")
+    api("io.nacular.measured:measured:0.3.1")
     implementation("com.aventrix.jnanoid:jnanoid:2.0.0")
 
     // Testing

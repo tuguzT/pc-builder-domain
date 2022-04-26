@@ -1,4 +1,4 @@
-package io.github.tuguzt.pcbuilder.domain
+package io.github.tuguzt.pcbuilder.domain.interactor
 
 import com.aventrix.jnanoid.jnanoid.NanoIdUtils
 import kotlin.random.Random
