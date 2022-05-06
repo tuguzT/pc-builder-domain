@@ -7,6 +7,9 @@ import kotlinx.serialization.descriptors.buildClassSerialDescriptor
 import kotlinx.serialization.descriptors.element
 import kotlinx.serialization.encoding.*
 
+/**
+ * Base serializer class for simple [units][Units].
+ */
 public abstract class UnitsBaseSerializer<T : Units>(serialName: String) : KSerializer<T> {
     protected abstract val factory: (suffix: String, ratio: Double) -> T
 

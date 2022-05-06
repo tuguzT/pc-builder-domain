@@ -7,6 +7,9 @@ import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.descriptors.buildClassSerialDescriptor
 import kotlinx.serialization.encoding.*
 
+/**
+ * Serializer class for [units product][UnitsProduct].
+ */
 public class UnitsProductSerializer<A : Units, B : Units>(
     private val serializerA: KSerializer<A>,
     private val serializerB: KSerializer<B>,

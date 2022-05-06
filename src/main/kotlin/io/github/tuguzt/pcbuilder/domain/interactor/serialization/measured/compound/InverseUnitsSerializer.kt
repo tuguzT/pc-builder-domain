@@ -7,6 +7,9 @@ import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.descriptors.buildClassSerialDescriptor
 import kotlinx.serialization.encoding.*
 
+/**
+ * Serializer class for [inverse units][InverseUnits].
+ */
 public class InverseUnitsSerializer<T : Units>(private val serializer: KSerializer<T>) : KSerializer<InverseUnits<T>> {
     override val descriptor: SerialDescriptor = buildClassSerialDescriptor("inverse_units") {
         element("unit", serializer.descriptor)

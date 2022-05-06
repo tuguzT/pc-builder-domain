@@ -8,7 +8,12 @@ import kotlin.random.asKotlinRandom
 /**
  * Utility function for default NanoID generation.
  *
- * @see NanoIdUtils.randomNanoId
+ * The string is generated using the given random number generator.
+ *
+ * @param random   The random number generator.
+ * @param alphabet The symbols used in the NanoId String.
+ * @param size     The number of symbols in the NanoId String.
+ * @return A randomly generated NanoId String.
  */
 @Suppress("NOTHING_TO_INLINE")
 public inline fun randomNanoId(

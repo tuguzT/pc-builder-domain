@@ -7,6 +7,9 @@ import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.descriptors.buildClassSerialDescriptor
 import kotlinx.serialization.encoding.*
 
+/**
+ * Serializer class for [units ratio][UnitsRatio].
+ */
 public class UnitsRatioSerializer<A : Units, B : Units>(
     private val serializerA: KSerializer<A>,
     private val serializerB: KSerializer<B>,

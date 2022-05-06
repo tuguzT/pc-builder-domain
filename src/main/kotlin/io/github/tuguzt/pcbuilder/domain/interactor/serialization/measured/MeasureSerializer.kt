@@ -8,6 +8,9 @@ import kotlinx.serialization.descriptors.buildClassSerialDescriptor
 import kotlinx.serialization.descriptors.element
 import kotlinx.serialization.encoding.*
 
+/**
+ * Serializer class for [measures][Measure] with a [unit][Units] type.
+ */
 public class MeasureSerializer<T : Units>(private val dataSerializer: KSerializer<T>) : KSerializer<Measure<T>> {
     override val descriptor: SerialDescriptor = buildClassSerialDescriptor("measure") {
         element<Double>("amount")

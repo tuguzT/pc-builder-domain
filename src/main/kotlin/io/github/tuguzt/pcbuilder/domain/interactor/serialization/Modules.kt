@@ -4,12 +4,15 @@ import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.*
 import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.compound.InverseUnitsSerializer
 import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.compound.UnitsProductSerializer
 import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.compound.UnitsRatioSerializer
-import io.nacular.measured.units.*
+import io.nacular.measured.units.Units
 import kotlinx.serialization.PolymorphicSerializer
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
 import kotlinx.serialization.modules.subclass
 
+/**
+ * Default [serializers module][SerializersModule] of the application.
+ */
 public val unitsModule: SerializersModule = SerializersModule {
     polymorphic(Units::class) {
         val unitsPolymorphicSerializer = PolymorphicSerializer(Units::class)
