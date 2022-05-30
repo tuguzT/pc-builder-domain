@@ -8,7 +8,7 @@ import kotlinx.serialization.Serializable
  * @see Monitor
  */
 @Serializable
-public enum class FrameSyncType {
+public enum class MonitorFrameSyncType {
     /**
      * Announced by `AMD` to compete against `Nvidia`'s proprietary `G-Sync`.
      *

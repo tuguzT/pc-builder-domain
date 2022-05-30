@@ -8,7 +8,7 @@ import kotlinx.serialization.Serializable
  * @see Monitor
  */
 @Serializable
-public enum class ScreenType {
+public enum class MonitorScreenType {
     Matte,
     Glossy,
 }

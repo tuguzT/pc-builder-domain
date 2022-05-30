@@ -19,7 +19,7 @@ public sealed class StorageType {
 
     /** Solid-State Drive */
     @Serializable
-    public class SSD(public val hasNVMe: Boolean) : StorageType()
+    public data class SSD(public val hasNVMe: Boolean) : StorageType()
 
     /**
      * Dual-drive hybrid systems or solid-state hybrid drives (SSHD)

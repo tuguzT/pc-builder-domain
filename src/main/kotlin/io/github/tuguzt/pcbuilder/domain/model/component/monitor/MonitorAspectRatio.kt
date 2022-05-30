@@ -8,6 +8,6 @@ import kotlinx.serialization.Serializable
  * @see Monitor
  */
 @Serializable
-public data class AspectRatio(val width: UInt, val height: UInt) {
+public data class MonitorAspectRatio(val width: UInt, val height: UInt) {
     override fun toString(): String = "$width:$height"
 }

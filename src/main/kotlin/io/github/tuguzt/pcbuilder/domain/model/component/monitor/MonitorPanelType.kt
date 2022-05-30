@@ -8,7 +8,7 @@ import kotlinx.serialization.Serializable
  * @see Monitor
  */
 @Serializable
-public enum class PanelType {
+public enum class MonitorPanelType {
     /** Twisted Nematic */
     TN,
 

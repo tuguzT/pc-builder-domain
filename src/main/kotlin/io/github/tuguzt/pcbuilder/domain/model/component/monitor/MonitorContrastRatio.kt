@@ -8,6 +8,6 @@ import kotlinx.serialization.Serializable
  * @see Monitor
  */
 @Serializable
-public data class ContrastRatio(val higherLuminance: UInt, val lowerLuminance: UInt) {
+public data class MonitorContrastRatio(val higherLuminance: UInt, val lowerLuminance: UInt) {
     override fun toString(): String = "$higherLuminance:$lowerLuminance"
 }

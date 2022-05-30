@@ -11,18 +11,19 @@ import kotlinx.serialization.Serializable
 public sealed class MemoryFormFactor {
     /** Dual In-line Memory Module */
     @Serializable
-    public class DIMM(public val pins: Pins) : MemoryFormFactor() {
+    public data class DIMM(public val pins: Pins) : MemoryFormFactor() {
         /**
          * Enum represents possible count of pins for `DIMM` memory form factor.
          *
          * @see DIMM
          */
+        @Serializable
         public enum class Pins(public val count: UInt) {
-            PINS_100(100u),
-            PINS_168(168u),
-            PINS_184(184u),
-            PINS_240(240u),
-            PINS_288(288u),
+            Pins100(100u),
+            Pins168(168u),
+            Pins184(184u),
+            Pins240(240u),
+            Pins288(288u),
         }
     }
 
@@ -32,18 +33,19 @@ public sealed class MemoryFormFactor {
      * @see DIMM
      */
     @Serializable
-    public class SmallOutlineDIMM(public val pins: Pins) : MemoryFormFactor() {
+    public data class SmallOutlineDIMM(public val pins: Pins) : MemoryFormFactor() {
         /**
          * Enum represents possible count of pins for `SO-DIMM` memory form factor.
          *
          * @see SmallOutlineDIMM
          */
+        @Serializable
         public enum class Pins(public val count: UInt) {
-            PINS_100(100u),
-            PINS_144(144u),
-            PINS_200(200u),
-            PINS_204(204u),
-            PINS_260(260u),
+            Pins100(100u),
+            Pins144(144u),
+            Pins200(200u),
+            Pins204(204u),
+            Pins260(260u),
         }
     }
 }
