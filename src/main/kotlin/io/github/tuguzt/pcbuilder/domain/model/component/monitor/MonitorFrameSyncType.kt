@@ -3,16 +3,12 @@ package io.github.tuguzt.pcbuilder.domain.model.component.monitor
 import kotlinx.serialization.Serializable
 
 /**
- * Enum represents frame synchronization technology supported by the monitor.
- *
- * @see Monitor
+ * Enum represents frame synchronization technology supported by the [monitor][Monitor].
  */
 @Serializable
 public enum class MonitorFrameSyncType {
     /**
-     * Announced by `AMD` to compete against `Nvidia`'s proprietary `G-Sync`.
-     *
-     * @see GSync
+     * Announced by `AMD` to compete against `Nvidia`'s proprietary [G-Sync][GSync].
      */
     FreeSync,
 
@@ -45,7 +41,7 @@ public enum class MonitorFrameSyncType {
 
     /**
      * `G-Sync Compatible` means it was tested by `Nvidia`
-     * to work as `G-Sync` with `FreeSync` monitors.
+     * to work as [G-Sync][GSync] with [FreeSync] monitors.
      *
      * @see GSync
      * @see FreeSync

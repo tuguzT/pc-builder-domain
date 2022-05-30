@@ -3,9 +3,7 @@ package io.github.tuguzt.pcbuilder.domain.model.component.monitor
 import kotlinx.serialization.Serializable
 
 /**
- * Enum represents interface used by the monitor.
- *
- * @see Monitor
+ * Enum represents interface used by the [monitor][Monitor].
  */
 @Serializable
 public enum class MonitorInterface {

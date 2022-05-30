@@ -3,9 +3,7 @@ package io.github.tuguzt.pcbuilder.domain.model.component.monitor
 import kotlinx.serialization.Serializable
 
 /**
- * Enum represents all panel types of the monitor.
- *
- * @see Monitor
+ * Enum represents all panel types of the [monitor][Monitor].
  */
 @Serializable
 public enum class MonitorPanelType {
