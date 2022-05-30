@@ -1,10 +1,13 @@
 package io.github.tuguzt.pcbuilder.domain.model.component.monitor
 
+import kotlinx.serialization.Serializable
+
 /**
  * Enum represents frame synchronization technology supported by the monitor.
  *
  * @see Monitor
  */
+@Serializable
 public enum class FrameSyncType {
     /**
      * Announced by `AMD` to compete against `Nvidia`'s proprietary `G-Sync`.

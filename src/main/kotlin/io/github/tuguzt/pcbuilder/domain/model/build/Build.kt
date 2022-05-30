@@ -1,6 +1,7 @@
 package io.github.tuguzt.pcbuilder.domain.model.build
 
 import io.github.tuguzt.pcbuilder.domain.model.Identifiable
+import io.github.tuguzt.pcbuilder.domain.model.NanoId
 import io.github.tuguzt.pcbuilder.domain.model.component.Component
 import io.github.tuguzt.pcbuilder.domain.model.component.cases.Case
 import io.github.tuguzt.pcbuilder.domain.model.component.cooler.Cooler
@@ -20,7 +21,7 @@ import io.github.tuguzt.pcbuilder.domain.model.component.storage.Storage
  *
  * @see Component
  */
-public interface Build : Identifiable<String> {
+public interface Build : Identifiable<NanoId> {
     public val name: String
     public val case: Case?
     public val cooler: Cooler?

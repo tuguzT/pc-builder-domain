@@ -1,6 +1,7 @@
 package io.github.tuguzt.pcbuilder.domain.interactor
 
 import com.aventrix.jnanoid.jnanoid.NanoIdUtils
+import io.github.tuguzt.pcbuilder.domain.model.NanoId
 import kotlin.random.Random
 import kotlin.random.asJavaRandom
 import kotlin.random.asKotlinRandom
@@ -15,12 +16,14 @@ import kotlin.random.asKotlinRandom
  * @param size     The number of symbols in the NanoId String.
  * @return A randomly generated NanoId String.
  */
-@Suppress("NOTHING_TO_INLINE")
-public inline fun randomNanoId(
+public fun randomNanoId(
     random: Random = defaultNumberGenerator,
     alphabet: CharArray = defaultAlphabet,
     size: Int = defaultSize,
-): String = NanoIdUtils.randomNanoId(random.asJavaRandom(), alphabet, size)
+): NanoId {
+    val nanoId = NanoIdUtils.randomNanoId(random.asJavaRandom(), alphabet, size)
+    return NanoId(nanoId)
+}
 
 /**
  * The default random number generator for NanoID used by this module.

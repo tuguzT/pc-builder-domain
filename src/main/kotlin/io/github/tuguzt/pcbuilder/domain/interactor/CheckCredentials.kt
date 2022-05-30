@@ -14,7 +14,10 @@ package io.github.tuguzt.pcbuilder.domain.interactor
  */
 public fun checkUsername(username: String): Boolean = usernameRegex matches username
 
-private val usernameRegex = Regex("^(?=.{4,32}\$)(?![-_.])(?!.*[-_.]{2})[a-zA-Z0-9-_.]+(?<![-_.])\$")
+/**
+ * Regular expression for username validation via [checkUsername] function.
+ */
+public val usernameRegex: Regex = Regex("^(?=.{4,32}\$)(?![-_.])(?!.*[-_.]{2})[a-zA-Z\\d-_.]+(?<![-_.])\$")
 
 /**
  * Checks if the provided [password] meets all requirements of the module.
@@ -28,4 +31,7 @@ private val usernameRegex = Regex("^(?=.{4,32}\$)(?![-_.])(?!.*[-_.]{2})[a-zA-Z0
  */
 public fun checkPassword(password: String): Boolean = passwordRegex matches password
 
-private val passwordRegex = Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?\\d)(?=.*?[()#?!@$%^&*_-]).{8,}\$")
+/**
+ * Regular expression for password validation via [checkPassword] function.
+ */
+public val passwordRegex: Regex = Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?\\d)(?=.*?[()#?!@$%^&*_-]).{8,}\$")

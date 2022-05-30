@@ -1,10 +1,13 @@
 package io.github.tuguzt.pcbuilder.domain.model.component.monitor
 
+import kotlinx.serialization.Serializable
+
 /**
  * Enum represents interface used by the monitor.
  *
  * @see Monitor
  */
+@Serializable
 public enum class MonitorInterface {
     /** High Definition Multimedia Interface */
     HDMI,

@@ -1,10 +1,13 @@
 package io.github.tuguzt.pcbuilder.domain.model.component.storage
 
+import kotlinx.serialization.Serializable
+
 /**
  * Enum represents different form factor types of storage.
  *
  * @see Storage
  */
+@Serializable
 public enum class StorageFormFactor {
     /** 1.8" */
     INCH_1_8,

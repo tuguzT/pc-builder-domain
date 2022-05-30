@@ -7,4 +7,4 @@ import kotlinx.serialization.Serializable
  * Serializable data of [user token][UserToken].
  */
 @Serializable
-public data class UserTokenData(override val accessToken: String) : UserToken
+public data class UserTokenData(override val token: String) : UserToken

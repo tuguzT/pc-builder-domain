@@ -1,10 +1,13 @@
 package io.github.tuguzt.pcbuilder.domain.model.component.storage
 
+import kotlinx.serialization.Serializable
+
 /**
  * Enum represents different interface types of storage.
  *
  * @see Storage
  */
+@Serializable
 public enum class StorageInterface {
     /** Serial Attached SCSI (Small Computer System Interface) */
     SAS,

@@ -28,9 +28,9 @@ public abstract class UnitsBaseSerializer<T : Units>(serialName: String) : KSeri
             var suffix: String? = null
             var ratio = 0.0
             while (true) {
-                when (val index = decodeElementIndex(LengthSerializer.descriptor)) {
-                    0 -> suffix = decodeStringElement(LengthSerializer.descriptor, index)
-                    1 -> ratio = decodeDoubleElement(LengthSerializer.descriptor, index)
+                when (val index = decodeElementIndex(descriptor)) {
+                    0 -> suffix = decodeStringElement(descriptor, index)
+                    1 -> ratio = decodeDoubleElement(descriptor, index)
                     CompositeDecoder.DECODE_DONE -> break
                     else -> error("Unexpected index: $index")
                 }

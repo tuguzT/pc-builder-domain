@@ -1,1 +1,1 @@
-rootProject.name = "PCBuilderDomain"
+rootProject.name = "pc-builder-domain"

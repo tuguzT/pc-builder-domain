@@ -25,7 +25,7 @@ kotlin {
 dependencies {
     // Kotlin
     implementation(kotlin("stdlib-jdk8"))
-    api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+    api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
 
     // Third-Party
     api("io.nacular.measured:measured:0.3.1")
@@ -52,7 +52,7 @@ publishing {
     publications {
         create<MavenPublication>("jitpack") {
             groupId = "com.github.tuguzT"
-            artifactId = "pc_builder_domain"
+            artifactId = "pc-builder-domain"
 
             from(components["kotlin"])
         }

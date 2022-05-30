@@ -1,10 +1,13 @@
 package io.github.tuguzt.pcbuilder.domain.model.component.memory
 
+import kotlinx.serialization.Serializable
+
 /**
  * Enum represents all possible types of memory.
  *
  * @see Memory
  */
+@Serializable
 public enum class MemoryType {
     /** Synchronous DRAM (Dynamic RAM) */
     SDRAM,
