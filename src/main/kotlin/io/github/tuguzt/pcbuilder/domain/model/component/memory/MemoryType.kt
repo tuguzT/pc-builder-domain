@@ -3,9 +3,7 @@ package io.github.tuguzt.pcbuilder.domain.model.component.memory
 import kotlinx.serialization.Serializable
 
 /**
- * Enum represents all possible types of memory.
- *
- * @see Memory
+ * Represents all possible types of [memory][Memory].
  */
 @Serializable
 public enum class MemoryType {
@@ -16,37 +14,27 @@ public enum class MemoryType {
     RDRAM,
 
     /**
-     * Double Data Rate SDRAM
-     *
-     * @see SDRAM
+     * Double Data Rate [SDRAM]
      */
     DDR,
 
     /**
-     * Second generation of the DDR.
-     *
-     * @see DDR
+     * Second generation of the [DDR].
      */
     DDR2,
 
     /**
-     * Third generation of the DDR.
-     *
-     * @see DDR
+     * Third generation of the [DDR].
      */
     DDR3,
 
     /**
-     * Fourth generation of the DDR.
-     *
-     * @see DDR
+     * Fourth generation of the [DDR].
      */
     DDR4,
 
     /**
-     * Fifth generation of the DDR.
-     *
-     * @see DDR
+     * Fifth generation of the [DDR].
      */
     DDR5,
 }

@@ -10,9 +10,7 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.UseSerializers
 
 /**
- * Data class represents module type of memory.
- *
- * @see Memory
+ * Module type of [memory][Memory].
  */
 @Serializable
 public data class MemoryModules(val count: UInt, val capacity: Measure<BinarySize>)

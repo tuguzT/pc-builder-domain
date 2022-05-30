@@ -3,19 +3,15 @@ package io.github.tuguzt.pcbuilder.domain.model.component.memory
 import kotlinx.serialization.Serializable
 
 /**
- * Sealed class represents all form factors types of the memory.
- *
- * @see Memory
+ * Form factors type of the [memory][Memory].
  */
 @Serializable
-public sealed class MemoryFormFactor {
+public sealed interface MemoryFormFactor {
     /** Dual In-line Memory Module */
     @Serializable
-    public data class DIMM(public val pins: Pins) : MemoryFormFactor() {
+    public data class DIMM(public val pins: Pins) : MemoryFormFactor {
         /**
-         * Enum represents possible count of pins for `DIMM` memory form factor.
-         *
-         * @see DIMM
+         * Represents possible count of pins for [DIMM] memory form factor.
          */
         @Serializable
         public enum class Pins(public val count: UInt) {
@@ -28,16 +24,12 @@ public sealed class MemoryFormFactor {
     }
 
     /**
-     * Small Outline DIMM (Dual In-line Memory Module)
-     *
-     * @see DIMM
+     * Small Outline [DIMM] (Dual In-line Memory Module)
      */
     @Serializable
-    public data class SmallOutlineDIMM(public val pins: Pins) : MemoryFormFactor() {
+    public data class SmallOutlineDIMM(public val pins: Pins) : MemoryFormFactor {
         /**
-         * Enum represents possible count of pins for `SO-DIMM` memory form factor.
-         *
-         * @see SmallOutlineDIMM
+         * Represents possible count of pins for [SO-DIMM][SmallOutlineDIMM] memory form factor.
          */
         @Serializable
         public enum class Pins(public val count: UInt) {
