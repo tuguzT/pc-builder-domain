@@ -10,7 +10,7 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.UseSerializers
 
 /**
- * Serializable data of physical size of the PC [component][Component].
+ * Physical size of the PC [component][Component].
  */
 @Serializable
 public data class Size(
