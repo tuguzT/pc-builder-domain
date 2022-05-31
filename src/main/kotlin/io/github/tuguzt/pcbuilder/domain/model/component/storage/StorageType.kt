@@ -3,9 +3,7 @@ package io.github.tuguzt.pcbuilder.domain.model.component.storage
 import kotlinx.serialization.Serializable
 
 /**
- * Sealed class represents all possible types of storages.
- *
- * @see Storage
+ * Sealed class represents all possible types of [storages][Storage].
  */
 @Serializable
 public sealed class StorageType {
@@ -23,9 +21,7 @@ public sealed class StorageType {
 
     /**
      * Dual-drive hybrid systems or solid-state hybrid drives (SSHD)
-     *
-     * @see HDD
-     * @see SSD
+     * which combine [HDD] and [SSD].
      */
     @Serializable
     public object Hybrid : StorageType()
