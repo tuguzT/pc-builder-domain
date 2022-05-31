@@ -6,7 +6,12 @@ import io.github.tuguzt.pcbuilder.domain.model.component.Component
  * Interface for all power supply units (or [PSU]) of PC.
  */
 public interface PowerSupplyUnit : Component {
-    // todo
+    public val efficiencyRating: PowerSupplyUnitEfficiencyRating
+    public val modularity: PowerSupplyUnitModularity?
+    public val wattage: PowerSupplyUnitWattage
+    public val type: PowerSupplyUnitType
+    public val fanType: PowerSupplyUnitFanType
+    public val connectors: PowerSupplyUnitConnectors
 }
 
 /**

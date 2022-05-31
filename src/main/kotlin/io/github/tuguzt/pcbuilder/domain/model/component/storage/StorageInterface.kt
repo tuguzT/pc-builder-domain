@@ -1,11 +1,23 @@
+@file:UseSerializers(
+    MeasureSerializer::class,
+    UnitsRatioSerializer::class,
+    BinarySizeSerializer::class,
+    TimeSerializer::class,
+)
+
 package io.github.tuguzt.pcbuilder.domain.model.component.storage
 
+import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.BinarySizeSerializer
+import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.MeasureSerializer
+import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.TimeSerializer
+import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.compound.UnitsRatioSerializer
 import io.nacular.measured.units.BinarySize.Companion.gigabits
 import io.nacular.measured.units.Measure
 import io.nacular.measured.units.Time.Companion.seconds
 import io.nacular.measured.units.div
 import io.nacular.measured.units.times
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.UseSerializers
 
 /**
  * Interface type of the [storage][Storage].
