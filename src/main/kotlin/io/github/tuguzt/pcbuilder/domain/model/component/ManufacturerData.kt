@@ -7,15 +7,12 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.Serializable
 
 /**
- * Serializable data of [component][Component].
+ * Serializable data of [Manufacturer].
  */
 @OptIn(ExperimentalSerializationApi::class)
 @Serializable
-public data class ComponentData(
+public data class ManufacturerData(
     @EncodeDefault override val id: NanoId = randomNanoId(),
     override val name: String,
     override val description: String,
-    override val weight: Weight,
-    override val size: Size,
-    override val manufacturer: Manufacturer,
-) : Component
+) : Manufacturer
