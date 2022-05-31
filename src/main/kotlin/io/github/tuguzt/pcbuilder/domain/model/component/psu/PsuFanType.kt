@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
  */
 @Suppress("SpellCheckingInspection")
 @Serializable
-public enum class PowerSupplyUnitFanType {
+public enum class PsuFanType {
     WithFan,
     Fanless,
 }

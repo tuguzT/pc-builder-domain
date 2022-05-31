@@ -5,6 +5,7 @@ import kotlinx.serialization.Serializable
 /**
  * Socket type of the [CPU].
  */
+@Suppress("EnumEntryName")
 @Serializable
 public enum class CpuSocket {
     AM1,

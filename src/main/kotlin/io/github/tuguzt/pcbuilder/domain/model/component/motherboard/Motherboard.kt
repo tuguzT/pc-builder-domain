@@ -1,6 +1,7 @@
 package io.github.tuguzt.pcbuilder.domain.model.component.motherboard
 
 import io.github.tuguzt.pcbuilder.domain.model.component.Component
+import io.github.tuguzt.pcbuilder.domain.model.component.gpu.GpuMultiSupport
 import io.github.tuguzt.pcbuilder.domain.model.component.memory.MemoryECCType
 import io.github.tuguzt.pcbuilder.domain.model.component.memory.MemoryType
 
@@ -15,7 +16,7 @@ public interface Motherboard : Component {
     public val memoryECCType: MemoryECCType
     public val memoryAmount: MotherboardMemoryAmount
     public val memorySlotCount: MotherboardMemorySlotCount
-    public val multiGpuSupport: MotherboardMultiGpuSupport?
+    public val multiGpuSupport: GpuMultiSupport?
     public val slots: MotherboardSlots
     public val ports: MotherboardPorts
     public val usbHeaders: MotherboardUsbHeaders

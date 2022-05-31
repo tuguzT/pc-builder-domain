@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
  * Type of the [power supply unit][PowerSupplyUnit].
  */
 @Serializable
-public enum class PowerSupplyUnitType {
+public enum class PsuType {
     ATX,
     BTX,
     ATX12V,

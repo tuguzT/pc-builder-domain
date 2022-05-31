@@ -1,6 +1,6 @@
 @file:UseSerializers(MeasureSerializer::class, InverseUnitsSerializer::class, TimeSerializer::class)
 
-package io.github.tuguzt.pcbuilder.domain.model.component.cpu
+package io.github.tuguzt.pcbuilder.domain.model.component.gpu
 
 import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.MeasureSerializer
 import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.TimeSerializer
@@ -11,14 +11,14 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.UseSerializers
 
 /**
- * Clock rate, or clock speed, of the [CPU].
+ * Clock rate, or clock speed, of the [GPU].
  */
 @JvmInline
 @Serializable
-public value class CpuClockRate(internal val rate: Measure<Frequency>)
+public value class GpuClockRate(internal val rate: Measure<Frequency>)
 
 /**
- * Represents [CPU clock rate][CpuClockRate]
+ * Represents [GPU clock rate][GpuClockRate]
  * as [measure][Measure] of [frequency][Frequency].
  */
-public fun CpuClockRate.asMeasure(): Measure<Frequency> = rate
+public fun GpuClockRate.asMeasure(): Measure<Frequency> = rate

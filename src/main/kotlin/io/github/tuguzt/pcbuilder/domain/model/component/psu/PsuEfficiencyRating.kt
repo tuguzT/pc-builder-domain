@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
  */
 @Suppress("EnumEntryName")
 @Serializable
-public enum class PowerSupplyUnitEfficiencyRating {
+public enum class PsuEfficiencyRating {
     R80_Plus_Titanium,
     R80_Plus_Platinum,
     R80_Plus_Gold,

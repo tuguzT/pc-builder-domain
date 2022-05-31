@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
  */
 @Suppress("SpellCheckingInspection")
 @Serializable
-public data class PowerSupplyUnitConnectors(
+public data class PsuConnectors(
     public val epsCount: UByte,
     public val atxCount: UByte,
     public val pciExpress12pinCount: UByte,
