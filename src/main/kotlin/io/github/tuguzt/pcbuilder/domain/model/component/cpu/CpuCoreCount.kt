@@ -7,7 +7,11 @@ import kotlinx.serialization.Serializable
  */
 @JvmInline
 @Serializable
-public value class CpuCoreCount(internal val count: UInt)
+public value class CpuCoreCount(internal val count: UInt) {
+    init {
+        require(count > 0u) { "Count must be greater than zero" }
+    }
+}
 
 /**
  * Converts [CpuCoreCount] object to [UInt] primitive.
