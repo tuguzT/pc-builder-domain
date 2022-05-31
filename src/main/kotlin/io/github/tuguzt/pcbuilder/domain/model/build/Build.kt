@@ -18,8 +18,6 @@ import io.github.tuguzt.pcbuilder.domain.model.component.storage.Storage
 
 /**
  * Stores information about custom PC build which consists of [components][Component].
- *
- * @see Component
  */
 public interface Build : Identifiable<NanoId> {
     public val name: String
@@ -36,21 +34,15 @@ public interface Build : Identifiable<NanoId> {
 
 /**
  * Shorthand for [Build.centralProcessingUnit].
- *
- * @see CPU
  */
 public inline val Build.cpu: CPU? get() = centralProcessingUnit
 
 /**
  * Shorthand for [Build.graphicsProcessingUnit].
- *
- * @see GPU
  */
 public inline val Build.gpu: GPU? get() = graphicsProcessingUnit
 
 /**
  * Shorthand for [Build.powerSupplyUnit].
- *
- * @see PSU
  */
 public inline val Build.psu: PSU? get() = powerSupplyUnit
