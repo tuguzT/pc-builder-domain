@@ -1,5 +1,6 @@
 package io.github.tuguzt.pcbuilder.domain.model.component.motherboard
 
+import io.github.tuguzt.pcbuilder.domain.model.component.cpu.CpuSocket
 import kotlinx.serialization.Serializable
 
 /**
@@ -8,35 +9,11 @@ import kotlinx.serialization.Serializable
 @Serializable
 public sealed interface MotherboardCpuSocket {
     /**
-     * Common CPU socket types.
+     * Standard CPU socket types.
      */
     @Suppress("EnumEntryName")
     @Serializable
-    public enum class Common : MotherboardCpuSocket {
-        AM1,
-        AM2,
-        AM2Plus,
-        AM3,
-        AM3Plus,
-        AM4,
-        FM1,
-        FM2,
-        FM2Plus,
-        LGA775,
-        LGA1150,
-        LGA1151,
-        LGA1155,
-        LGA1156,
-        LGA1200,
-        LGA1366,
-        LGA1700,
-        LGA2011,
-        LGA2011_3,
-        LGA2011_3Narrow,
-        LGA2066,
-        sTR4,
-        sTRX4,
-    }
+    public data class Standard(public val socket: CpuSocket) : MotherboardCpuSocket
 
     /**
      * Integrated CPU socket types.

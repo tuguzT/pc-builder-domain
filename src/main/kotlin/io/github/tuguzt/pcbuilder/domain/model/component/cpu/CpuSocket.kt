@@ -8,14 +8,15 @@ import kotlinx.serialization.Serializable
 @Serializable
 public enum class CpuSocket {
     AM1,
-    AM2Plus,
+    AM2,
+    AM2_Plus,
     AM3,
-    AM3Plus,
+    AM3_Plus,
     AM4,
     C32,
     FM1,
     FM2,
-    FM2Plus,
+    FM2_Plus,
     G34,
     LGA771,
     LGA775,
@@ -29,7 +30,9 @@ public enum class CpuSocket {
     LGA1700,
     LGA2011,
     LGA2011_3,
+    LGA2011_3_Narrow,
     LGA2066,
+    LGA3647,
     sTR4,
     sTRX4,
 }
