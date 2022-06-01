@@ -62,6 +62,7 @@ public sealed interface CpuIntegratedGraphics {
     /**
      * Radeon [integrated graphics][CpuIntegratedGraphics].
      */
+    @Suppress("SpellCheckingInspection")
     @Serializable
     public sealed interface Radeon : CpuIntegratedGraphics {
         /**

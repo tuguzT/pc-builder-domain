@@ -24,12 +24,12 @@ public interface Build : Identifiable<NanoId> {
     public val case: Case?
     public val cooler: Cooler?
     public val centralProcessingUnit: CentralProcessingUnit?
-    public val graphicsProcessingUnit: GraphicsProcessingUnit?
-    public val memory: Memory?
-    public val monitor: Monitor?
+    public val graphicsProcessingUnit: List<GraphicsProcessingUnit>
+    public val memory: List<Memory>
+    public val monitor: List<Monitor>
     public val motherboard: Motherboard?
     public val powerSupplyUnit: PowerSupplyUnit?
-    public val storage: Storage?
+    public val storage: List<Storage>
 }
 
 /**
@@ -40,7 +40,7 @@ public inline val Build.cpu: CPU? get() = centralProcessingUnit
 /**
  * Shorthand for [Build.graphicsProcessingUnit].
  */
-public inline val Build.gpu: GPU? get() = graphicsProcessingUnit
+public inline val Build.gpu: List<GPU> get() = graphicsProcessingUnit
 
 /**
  * Shorthand for [Build.powerSupplyUnit].

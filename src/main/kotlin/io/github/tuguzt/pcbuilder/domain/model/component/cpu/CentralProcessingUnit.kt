@@ -1,6 +1,7 @@
 package io.github.tuguzt.pcbuilder.domain.model.component.cpu
 
 import io.github.tuguzt.pcbuilder.domain.model.component.Component
+import io.github.tuguzt.pcbuilder.domain.model.component.ThermalDesignPower
 import io.github.tuguzt.pcbuilder.domain.model.component.memory.MemoryECCType
 
 /**
@@ -10,7 +11,7 @@ public interface CentralProcessingUnit : Component {
     public val coreCount: CpuCoreCount
     public val coreClockRate: CpuClockRate
     public val boostClockRate: CpuClockRate
-    public val thermalDesignPower: CpuThermalDesignPower
+    public val thermalDesignPower: ThermalDesignPower
     public val integratedGraphics: CpuIntegratedGraphics?
     public val smt: CpuSMT
     public val socket: CpuSocket

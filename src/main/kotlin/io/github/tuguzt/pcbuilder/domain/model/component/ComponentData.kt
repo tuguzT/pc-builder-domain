@@ -17,5 +17,5 @@ public data class ComponentData(
     override val description: String,
     override val weight: Weight,
     override val size: Size,
-    override val manufacturer: Manufacturer,
+    override val manufacturer: ManufacturerData,
 ) : Component
