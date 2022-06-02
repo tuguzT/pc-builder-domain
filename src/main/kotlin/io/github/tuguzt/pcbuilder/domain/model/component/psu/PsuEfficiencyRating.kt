@@ -8,10 +8,12 @@ import kotlinx.serialization.Serializable
 @Suppress("EnumEntryName")
 @Serializable
 public enum class PsuEfficiencyRating {
-    R80_Plus_Titanium,
-    R80_Plus_Platinum,
-    R80_Plus_Gold,
-    R80_Plus_Silver,
-    R80_Plus_Bronze,
-    R80_Plus,
+    R80Plus_Titanium,
+    R80Plus_Platinum,
+    R80Plus_Gold,
+    R80Plus_Silver,
+    R80Plus_Bronze,
+    R80Plus;
+
+    override fun toString(): String = name.substring(1).replace("Plus", "+").replace('_', ' ')
 }

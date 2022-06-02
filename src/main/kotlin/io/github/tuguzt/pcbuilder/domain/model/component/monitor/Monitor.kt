@@ -12,7 +12,7 @@ public interface Monitor : Component {
     public val refreshRate: MonitorRefreshRate
     public val responseTime: MonitorResponseTime
     public val frameSyncType: GpuFrameSyncType?
-    public val `interface`: MonitorInterface
+    public val interfaces: Map<MonitorInterface, UInt>
     public val panelType: MonitorPanelType
     public val pwmType: MonitorPWMType
     public val resolution: MonitorResolution

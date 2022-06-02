@@ -8,7 +8,9 @@ import io.github.tuguzt.pcbuilder.domain.model.component.cpu.CpuSocket
  */
 public interface Cooler : Component {
     public val bearing: CoolerBearing
-    public val cpuSocket: CpuSocket
+    public val cpuSocket: List<CpuSocket>
     public val waterType: CoolerWaterType?
     public val fanType: CoolerFanType
+    public val fanRPM: CoolerRPM?
+    public val noiseLevel: CoolerNoiseLevel
 }

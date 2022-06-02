@@ -12,19 +12,25 @@ public sealed interface StorageFormFactor {
      * 1.8" [storage][Storage] form factor.
      */
     @Serializable
-    public object Inch1dot8 : StorageFormFactor
+    public object Inch1dot8 : StorageFormFactor {
+        override fun toString(): String = "1.8\""
+    }
 
     /**
      * 2.5" [storage][Storage] form factor.
      */
     @Serializable
-    public object Inch2dot5 : StorageFormFactor
+    public object Inch2dot5 : StorageFormFactor {
+        override fun toString(): String = "2.5\""
+    }
 
     /**
      * 3.5" [storage][Storage] form factor.
      */
     @Serializable
-    public object Inch3dot5 : StorageFormFactor
+    public object Inch3dot5 : StorageFormFactor {
+        override fun toString(): String = "3.5\""
+    }
 
     /**
      * PCIe [storage][Storage] form factor.
@@ -47,6 +53,8 @@ public sealed interface StorageFormFactor {
         M2_2242,
         M2_2260,
         M2_2280,
-        M2_22110,
+        M2_22110;
+
+        override fun toString(): String = "M.2-${name.substring(3)}"
     }
 }

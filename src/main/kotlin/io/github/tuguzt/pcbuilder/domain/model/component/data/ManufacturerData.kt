@@ -1,21 +1,19 @@
-package io.github.tuguzt.pcbuilder.domain.model.component
+package io.github.tuguzt.pcbuilder.domain.model.component.data
 
 import io.github.tuguzt.pcbuilder.domain.interactor.randomNanoId
 import io.github.tuguzt.pcbuilder.domain.model.NanoId
+import io.github.tuguzt.pcbuilder.domain.model.component.Manufacturer
 import kotlinx.serialization.EncodeDefault
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.Serializable
 
 /**
- * Serializable data of [component][Component].
+ * Serializable data of [Manufacturer].
  */
 @OptIn(ExperimentalSerializationApi::class)
 @Serializable
-public data class ComponentData(
+public data class ManufacturerData(
     @EncodeDefault override val id: NanoId = randomNanoId(),
     override val name: String,
     override val description: String,
-    override val weight: Weight,
-    override val size: Size,
-    override val manufacturer: ManufacturerData,
-) : Component
+) : Manufacturer

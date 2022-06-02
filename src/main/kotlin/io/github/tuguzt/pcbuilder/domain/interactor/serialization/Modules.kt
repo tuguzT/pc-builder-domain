@@ -33,5 +33,6 @@ public val unitsModule: SerializersModule = SerializersModule {
         /** Units defined by this domain module */
         subclass(ElectricitySerializer)
         subclass(LuminousIntensitySerializer)
+        subclass(NoiseLevelSerializer)
     }
 }

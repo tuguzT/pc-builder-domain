@@ -11,13 +11,17 @@ public sealed interface GpuInterface {
      * AGP interface type.
      */
     @Serializable
-    public object AGP : GpuInterface
+    public object AGP : GpuInterface {
+        override fun toString(): String = "AGP"
+    }
 
     /**
      * PCI interface type.
      */
     @Serializable
-    public object PCI : GpuInterface
+    public object PCI : GpuInterface {
+        override fun toString(): String = "PCI"
+    }
 
     /**
      * PCI Express interface type.
@@ -29,6 +33,8 @@ public sealed interface GpuInterface {
         PCIe_x2(lineCount = 2u),
         PCIe_x4(lineCount = 4u),
         PCIe_x8(lineCount = 8u),
-        PCIe_x16(lineCount = 16u),
+        PCIe_x16(lineCount = 16u);
+
+        override fun toString(): String = "PCIe x$lineCount"
     }
 }

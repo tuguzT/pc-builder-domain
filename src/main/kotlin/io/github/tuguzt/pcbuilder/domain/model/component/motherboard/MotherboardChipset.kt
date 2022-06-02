@@ -12,24 +12,24 @@ public sealed interface MotherboardChipset {
      */
     @Serializable
     public enum class AMD : MotherboardChipset {
-        AMD690G,
-        AMD740G,
-        AMD760G,
-        AMD770,
-        AMD780G,
-        AMD780L,
-        AMD785G,
-        AMD790FX,
-        AMD790GX,
-        AMD790X,
-        AMD870,
-        AMD880G,
-        AMD880GX,
-        AMD890FX,
-        AMD890GX,
-        AMD970,
-        AMD990FX,
-        AMD990X,
+        AMD_690G,
+        AMD_740G,
+        AMD_760G,
+        AMD_770,
+        AMD_780G,
+        AMD_780L,
+        AMD_785G,
+        AMD_790FX,
+        AMD_790GX,
+        AMD_790X,
+        AMD_870,
+        AMD_880G,
+        AMD_880GX,
+        AMD_890FX,
+        AMD_890GX,
+        AMD_970,
+        AMD_990FX,
+        AMD_990X,
         A320,
         A520,
         A55,
@@ -53,15 +53,22 @@ public sealed interface MotherboardChipset {
         X399,
         X470,
         X570,
+        WRX80;
+
+        override fun toString(): String = when {
+            "AMD" !in name -> "AMD $name"
+            else -> name.replace('_', ' ')
+        }
     }
 
     /**
      * Intel chipsets.
      */
+    @Suppress("EnumEntryName")
     @Serializable
     public enum class Intel : MotherboardChipset {
-        Intel3450,
-        Intel5520,
+        Intel_3450,
+        Intel_5520,
         B150,
         B250,
         B360,
@@ -144,7 +151,12 @@ public sealed interface MotherboardChipset {
         Z75,
         Z77,
         Z87,
-        Z97,
+        Z97;
+
+        override fun toString(): String = when {
+            "Intel" !in name -> "Intel $name"
+            else -> name.replace('_', ' ')
+        }
     }
 
     /**

@@ -5,10 +5,13 @@ import kotlinx.serialization.Serializable
 /**
  * Bearing type of the [cooler][Cooler].
  */
+@Suppress("EnumEntryName")
 @Serializable
 public enum class CoolerBearing {
     Ball,
-    FluidDynamic,
+    Fluid_Dynamic,
     Rifle,
-    Sleeve,
+    Sleeve;
+
+    override fun toString(): String = name.replace('_', ' ')
 }

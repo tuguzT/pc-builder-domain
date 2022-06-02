@@ -10,39 +10,51 @@ public sealed interface CaseType {
     /**
      * ATX [type][CaseType] of the [case][Case].
      */
+    @Suppress("EnumEntryName")
     @Serializable
     public enum class ATX : CaseType {
         Desktop,
-        FullTower,
-        MidTower,
-        MiniTower,
-        TestBench,
+        Full_Tower,
+        Mid_Tower,
+        Mini_Tower,
+        Test_Bench;
+
+        override fun toString(): String = "ATX ${name.replace('_', ' ')}"
     }
 
     /**
      * MicroATX [type][CaseType] of the [case][Case].
      */
+    @Suppress("EnumEntryName")
     @Serializable
     public enum class MicroATX : CaseType {
         Desktop,
-        MidTower,
-        MiniTower,
-        Slim,
+        Mid_Tower,
+        Mini_Tower,
+        Slim;
+
+        override fun toString(): String = "MicroATX ${name.replace('_', ' ')}"
     }
 
     /**
      * Mini ITX [type][CaseType] of the [case][Case].
      */
+    @Suppress("EnumEntryName")
     @Serializable
     public enum class MiniITX : CaseType {
         Desktop,
-        TestBench,
-        Tower,
+        Test_Bench,
+        Tower;
+
+        override fun toString(): String = "Mini ITX ${name.replace('_', ' ')}"
     }
 
     /**
      * HTPC [type][CaseType] of the [case][Case].
      */
+    @Suppress("SpellCheckingInspection")
     @Serializable
-    public object HTPC : CaseType
+    public object HTPC : CaseType {
+        override fun toString(): String = "HTPC"
+    }
 }

@@ -5,6 +5,7 @@ import kotlinx.serialization.Serializable
 /**
  * Enum represents interface used by the [monitor][Monitor].
  */
+@Suppress("EnumEntryName")
 @Serializable
 public enum class MonitorInterface {
     /** High Definition Multimedia Interface */
@@ -15,7 +16,7 @@ public enum class MonitorInterface {
      *
      * @see HDMI
      */
-    MiniHDMI,
+    Mini_HDMI,
 
     /** Digital Visual Interface */
     DVI,
@@ -56,7 +57,7 @@ public enum class MonitorInterface {
     /**
      * @see DisplayPort
      */
-    MiniDisplayPort,
+    Mini_DisplayPort,
 
     VirtualLink,
 
@@ -65,4 +66,10 @@ public enum class MonitorInterface {
 
     /** Bayonet Neill–Concelman */
     BNC,
+
+    Component,
+
+    S_Video;
+
+    override fun toString(): String = name.replace('_', '-')
 }

@@ -11,7 +11,7 @@ public interface Case : Component {
     public val powerSupply: CasePowerSupply?
     public val powerSupplyShroud: CasePowerSupplyShroud
     public val sidePanelWindow: CaseSidePanelWindow?
-    public val motherboardFormFactor: MotherboardFormFactor
+    public val motherboardFormFactors: List<MotherboardFormFactor>
     public val driveBays: CaseDriveBays
     public val expansionSlots: CaseExpansionSlots
 }

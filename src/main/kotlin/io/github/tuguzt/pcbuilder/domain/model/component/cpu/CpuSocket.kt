@@ -9,15 +9,14 @@ import kotlinx.serialization.Serializable
 @Serializable
 public enum class CpuSocket {
     AM1,
-    AM2,
-    AM2_Plus,
+    AM2Plus,
     AM3,
-    AM3_Plus,
+    AM3Plus,
     AM4,
     C32,
     FM1,
     FM2,
-    FM2_Plus,
+    FM2Plus,
     G34,
     LGA771,
     LGA775,
@@ -36,4 +35,7 @@ public enum class CpuSocket {
     LGA3647,
     sTR4,
     sTRX4,
+    sWRX8;
+
+    override fun toString(): String = name.replace("Plus", "+").replace('_', ' ')
 }

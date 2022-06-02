@@ -71,19 +71,23 @@ public sealed interface StorageInterface {
      *  Mini [SATA] (or mSATA) [storage][Storage] interface.
      */
     @Serializable
-    public object MiniSATA : StorageInterface
+    public object MiniSATA : StorageInterface {
+        override fun toString(): String = "mSATA"
+    }
 
     /**
      * Parallel AT Attachment [storage][Storage] interface.
      *
      * Before the existence of [SATA], it was called ATA.
      */
-    @Suppress("SpellCheckingInspection")
+    @Suppress("SpellCheckingInspection", "EnumEntryName")
     @Serializable
     public enum class PATA : StorageInterface {
-        PATA100,
-        PATA44pin100,
-        PATA44pin133,
+        PATA_100,
+        PATA_44Pin_100,
+        PATA_44Pin_133;
+
+        override fun toString(): String = name.replace('_', ' ').replace("Pin", "-Pin")
     }
 
     /**
@@ -91,7 +95,9 @@ public sealed interface StorageInterface {
      */
     @Suppress("SpellCheckingInspection")
     @Serializable
-    public object Udot2 : StorageInterface
+    public object Udot2 : StorageInterface {
+        override fun toString(): String = "U.2"
+    }
 
     /**
      * M.2 [storage][Storage] interface.

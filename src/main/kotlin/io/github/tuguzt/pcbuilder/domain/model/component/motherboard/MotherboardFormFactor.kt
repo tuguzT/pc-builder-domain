@@ -5,18 +5,21 @@ import kotlinx.serialization.Serializable
 /**
  * Form factor of the [motherboard][Motherboard].
  */
+@Suppress("EnumEntryName", "SpellCheckingInspection")
 @Serializable
 public enum class MotherboardFormFactor {
     AT,
     ATX,
     EATX,
-    FlexATX,
+    Flex_ATX,
     HPTX,
-    MicroATX,
-    MiniITX,
-    ThinMiniITX,
-    MiniDTX,
+    Micro_ATX,
+    Mini_ITX,
+    Thin_Mini_ITX,
+    Mini_DTX,
     SSI_CEB,
     SSI_EEB,
-    XL_ATX,
+    XL_ATX;
+
+    override fun toString(): String = name.replace('_', ' ')
 }
