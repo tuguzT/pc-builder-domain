@@ -1,5 +1,6 @@
 package io.github.tuguzt.pcbuilder.domain.model.component.cases
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 /**
@@ -12,6 +13,7 @@ public sealed interface CaseType {
      */
     @Suppress("EnumEntryName")
     @Serializable
+    @SerialName("ATX")
     public enum class ATX : CaseType {
         Desktop,
         Full_Tower,
@@ -27,6 +29,7 @@ public sealed interface CaseType {
      */
     @Suppress("EnumEntryName")
     @Serializable
+    @SerialName("MicroATX")
     public enum class MicroATX : CaseType {
         Desktop,
         Mid_Tower,
@@ -41,6 +44,7 @@ public sealed interface CaseType {
      */
     @Suppress("EnumEntryName")
     @Serializable
+    @SerialName("MiniITX")
     public enum class MiniITX : CaseType {
         Desktop,
         Test_Bench,
@@ -54,6 +58,7 @@ public sealed interface CaseType {
      */
     @Suppress("SpellCheckingInspection")
     @Serializable
+    @SerialName("HTPC")
     public object HTPC : CaseType {
         override fun toString(): String = "HTPC"
     }

@@ -1,25 +1,24 @@
 package io.github.tuguzt.pcbuilder.domain
 
 import io.github.tuguzt.pcbuilder.domain.interactor.serialization.json
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.AngleSerializer
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.MeasureSerializer
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.TimeSerializer
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.compound.InverseUnitsSerializer
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.unitsModule
+import io.github.tuguzt.pcbuilder.domain.interactor.serialization.serializersModule
 import io.github.tuguzt.pcbuilder.domain.model.component.Size
+import io.github.tuguzt.pcbuilder.domain.model.component.cases.CaseType
 import io.github.tuguzt.pcbuilder.domain.model.units.hertz
-import io.nacular.measured.units.Angle.Companion.degrees
+import io.nacular.measured.units.Angle.Companion.radians
 import io.nacular.measured.units.Length.Companion.kilometers
 import io.nacular.measured.units.Length.Companion.meters
 import io.nacular.measured.units.Length.Companion.millimeters
+import io.nacular.measured.units.Measure
 import io.nacular.measured.units.times
+import kotlinx.serialization.PolymorphicSerializer
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
 /**
- * Set of tests for serialization [module][unitsModule].
+ * Set of tests for serialization [module][serializersModule].
  */
 class Serialization {
     @Test
@@ -35,9 +34,9 @@ class Serialization {
 
     @Test
     fun `basic types`() {
-        val serializer = MeasureSerializer(AngleSerializer)
+        val serializer = PolymorphicSerializer(Measure::class)
 
-        val angle = 90 * degrees
+        val angle = 90 * radians
         val string = json.encodeToString(serializer, angle)
         println(string)
 
@@ -48,7 +47,7 @@ class Serialization {
 
     @Test
     fun `compound types`() {
-        val serializer = MeasureSerializer(InverseUnitsSerializer(TimeSerializer))
+        val serializer = PolymorphicSerializer(Measure::class)
 
         val frequency = 10 * hertz
         val string = json.encodeToString(serializer, frequency)
@@ -57,5 +56,18 @@ class Serialization {
         val newFrequency = json.decodeFromString(serializer, string)
         println(newFrequency)
         assertEquals(frequency, newFrequency)
+    }
+
+    @Test
+    fun `polymorphic enumerations`() {
+        val serializer = PolymorphicSerializer(CaseType::class)
+
+        val caseType = CaseType.ATX.Desktop
+        val string = json.encodeToString(serializer, caseType)
+        println(string)
+
+        val newCaseType = json.decodeFromString(serializer, string)
+        println(newCaseType)
+        assertEquals(caseType, newCaseType)
     }
 }

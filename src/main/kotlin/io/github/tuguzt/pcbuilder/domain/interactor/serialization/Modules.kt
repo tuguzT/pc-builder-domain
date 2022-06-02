@@ -4,6 +4,8 @@ import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.*
 import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.compound.InverseUnitsSerializer
 import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.compound.UnitsProductSerializer
 import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.compound.UnitsRatioSerializer
+import io.github.tuguzt.pcbuilder.domain.model.component.cases.CaseType
+import io.nacular.measured.units.Measure
 import io.nacular.measured.units.Units
 import kotlinx.serialization.PolymorphicSerializer
 import kotlinx.serialization.modules.SerializersModule
@@ -13,7 +15,7 @@ import kotlinx.serialization.modules.subclass
 /**
  * Default [serializers module][SerializersModule] of the application.
  */
-public val unitsModule: SerializersModule = SerializersModule {
+public val serializersModule: SerializersModule = SerializersModule {
     polymorphic(Units::class) {
         val unitsPolymorphicSerializer = PolymorphicSerializer(Units::class)
 
@@ -34,5 +36,16 @@ public val unitsModule: SerializersModule = SerializersModule {
         subclass(ElectricitySerializer)
         subclass(LuminousIntensitySerializer)
         subclass(NoiseLevelSerializer)
+    }
+
+    polymorphic(Measure::class) {
+        subclass(MeasureSerializer(PolymorphicSerializer(Units::class)))
+    }
+
+    polymorphic(CaseType::class) {
+        subclass(PolymorphicEnumSerializer(CaseType.ATX.serializer()))
+        subclass(PolymorphicEnumSerializer(CaseType.MicroATX.serializer()))
+        subclass(PolymorphicEnumSerializer(CaseType.MiniITX.serializer()))
+        subclass(CaseType.HTPC.serializer())
     }
 }
