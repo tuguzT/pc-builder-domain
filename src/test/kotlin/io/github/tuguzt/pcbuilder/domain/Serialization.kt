@@ -60,13 +60,11 @@ class Serialization {
 
     @Test
     fun `polymorphic enumerations`() {
-        val serializer = PolymorphicSerializer(CaseType::class)
-
-        val caseType = CaseType.ATX.Desktop
-        val string = json.encodeToString(serializer, caseType)
+        val caseType: CaseType = CaseType.ATX.Desktop
+        val string = json.encodeToString(caseType)
         println(string)
 
-        val newCaseType = json.decodeFromString(serializer, string)
+        val newCaseType: CaseType = json.decodeFromString(string)
         println(newCaseType)
         assertEquals(caseType, newCaseType)
     }

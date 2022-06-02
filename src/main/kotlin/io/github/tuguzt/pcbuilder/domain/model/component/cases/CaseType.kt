@@ -6,7 +6,6 @@ import kotlinx.serialization.Serializable
 /**
  * Type of the [case][Case].
  */
-@Serializable
 public sealed interface CaseType {
     /**
      * ATX [type][CaseType] of the [case][Case].
