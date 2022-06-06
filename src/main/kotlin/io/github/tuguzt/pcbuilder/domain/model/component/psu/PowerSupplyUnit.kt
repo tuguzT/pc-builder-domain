@@ -9,7 +9,7 @@ public interface PowerSupplyUnit : Component {
     public val efficiencyRating: PsuEfficiencyRating?
     public val modularity: PsuModularity?
     public val wattage: PsuWattage
-    public val type: PsuType
+    public val psuType: PsuType
     public val fanType: PsuFanType
     public val connectors: PsuConnectors
 }

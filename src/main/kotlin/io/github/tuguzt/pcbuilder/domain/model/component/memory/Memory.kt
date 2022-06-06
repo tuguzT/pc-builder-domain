@@ -7,7 +7,7 @@ import io.github.tuguzt.pcbuilder.domain.model.component.Component
  */
 public interface Memory : Component {
     public val formFactor: MemoryFormFactor
-    public val type: MemoryType
+    public val memoryType: MemoryType
     public val speed: MemorySpeed
     public val modules: MemoryModules
     public val voltage: MemoryVoltage

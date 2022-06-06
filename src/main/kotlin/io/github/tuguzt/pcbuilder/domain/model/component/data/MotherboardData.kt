@@ -1,4 +1,4 @@
-package io.github.tuguzt.pcbuilder.domain.model.component.motherboard.data
+package io.github.tuguzt.pcbuilder.domain.model.component.data
 
 import io.github.tuguzt.pcbuilder.domain.interactor.randomNanoId
 import io.github.tuguzt.pcbuilder.domain.model.NanoId
@@ -11,10 +11,12 @@ import io.github.tuguzt.pcbuilder.domain.model.component.memory.MemoryType
 import io.github.tuguzt.pcbuilder.domain.model.component.motherboard.*
 import kotlinx.serialization.EncodeDefault
 import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @OptIn(ExperimentalSerializationApi::class)
 @Serializable
+@SerialName("motherboard")
 public data class MotherboardData(
     @EncodeDefault override val id: NanoId = randomNanoId(),
     override val name: String,
@@ -22,6 +24,8 @@ public data class MotherboardData(
     override val weight: Weight,
     override val size: Size,
     override val manufacturer: Manufacturer,
+    override val imageUri: String?,
+    override val isFavorite: Boolean,
     override val formFactor: MotherboardFormFactor,
     override val chipset: MotherboardChipset,
     override val cpuSocket: MotherboardCpuSocket,
@@ -33,4 +37,4 @@ public data class MotherboardData(
     override val slots: MotherboardSlots,
     override val ports: MotherboardPorts,
     override val usbHeaders: MotherboardUsbHeaders,
-) : Motherboard
+) : PolymorphicComponent(), Motherboard

@@ -1,4 +1,4 @@
-package io.github.tuguzt.pcbuilder.domain.model.component.gpu.data
+package io.github.tuguzt.pcbuilder.domain.model.component.data
 
 import io.github.tuguzt.pcbuilder.domain.interactor.randomNanoId
 import io.github.tuguzt.pcbuilder.domain.model.NanoId
@@ -9,10 +9,12 @@ import io.github.tuguzt.pcbuilder.domain.model.component.Weight
 import io.github.tuguzt.pcbuilder.domain.model.component.gpu.*
 import kotlinx.serialization.EncodeDefault
 import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @OptIn(ExperimentalSerializationApi::class)
 @Serializable
+@SerialName("gpu")
 public data class GpuData(
     @EncodeDefault override val id: NanoId = randomNanoId(),
     override val name: String,
@@ -20,6 +22,8 @@ public data class GpuData(
     override val weight: Weight,
     override val size: Size,
     override val manufacturer: Manufacturer,
+    override val imageUri: String?,
+    override val isFavorite: Boolean,
     override val `interface`: GpuInterface,
     override val chipset: GpuChipset,
     override val coreClockRate: GpuClockRate,
@@ -33,4 +37,4 @@ public data class GpuData(
     override val expansionSlotWidth: UByte,
     override val cooling: GpuCooling,
     override val externalPower: GpuExternalPower,
-) : GraphicsProcessingUnit
+) : PolymorphicComponent(), GraphicsProcessingUnit

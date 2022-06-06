@@ -7,7 +7,7 @@ import io.github.tuguzt.pcbuilder.domain.model.component.motherboard.Motherboard
  * Interface for all cases of PC.
  */
 public interface Case : Component {
-    public val type: CaseType
+    public val caseType: CaseType
     public val powerSupply: CasePowerSupply?
     public val powerSupplyShroud: CasePowerSupplyShroud
     public val sidePanelWindow: CaseSidePanelWindow?

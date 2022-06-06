@@ -12,4 +12,6 @@ public interface Component : Identifiable<NanoId> {
     public val weight: Weight
     public val size: Size
     public val manufacturer: Manufacturer
+    public val imageUri: String?
+    public val isFavorite: Boolean
 }

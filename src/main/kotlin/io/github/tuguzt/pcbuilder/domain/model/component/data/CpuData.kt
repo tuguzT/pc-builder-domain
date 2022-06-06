@@ -1,4 +1,4 @@
-package io.github.tuguzt.pcbuilder.domain.model.component.cpu.data
+package io.github.tuguzt.pcbuilder.domain.model.component.data
 
 import io.github.tuguzt.pcbuilder.domain.interactor.randomNanoId
 import io.github.tuguzt.pcbuilder.domain.model.NanoId
@@ -10,10 +10,12 @@ import io.github.tuguzt.pcbuilder.domain.model.component.cpu.*
 import io.github.tuguzt.pcbuilder.domain.model.component.memory.MemoryECCType
 import kotlinx.serialization.EncodeDefault
 import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @OptIn(ExperimentalSerializationApi::class)
 @Serializable
+@SerialName("cpu")
 public data class CpuData(
     @EncodeDefault override val id: NanoId = randomNanoId(),
     override val name: String,
@@ -21,6 +23,8 @@ public data class CpuData(
     override val weight: Weight,
     override val size: Size,
     override val manufacturer: Manufacturer,
+    override val imageUri: String?,
+    override val isFavorite: Boolean,
     override val coreCount: CpuCoreCount,
     override val threadCount: CpuThreadCount,
     override val coreClockRate: CpuClockRate,
@@ -31,4 +35,4 @@ public data class CpuData(
     override val socket: CpuSocket,
     override val series: CpuSeries,
     override val memoryECCType: MemoryECCType,
-) : CentralProcessingUnit
+) : PolymorphicComponent(), CentralProcessingUnit

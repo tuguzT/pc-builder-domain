@@ -1,4 +1,4 @@
-package io.github.tuguzt.pcbuilder.domain.model.component.monitor.data
+package io.github.tuguzt.pcbuilder.domain.model.component.data
 
 import io.github.tuguzt.pcbuilder.domain.interactor.randomNanoId
 import io.github.tuguzt.pcbuilder.domain.model.NanoId
@@ -9,10 +9,12 @@ import io.github.tuguzt.pcbuilder.domain.model.component.gpu.GpuFrameSyncType
 import io.github.tuguzt.pcbuilder.domain.model.component.monitor.*
 import kotlinx.serialization.EncodeDefault
 import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @OptIn(ExperimentalSerializationApi::class)
 @Serializable
+@SerialName("monitor")
 public data class MonitorData(
     @EncodeDefault override val id: NanoId = randomNanoId(),
     override val name: String,
@@ -20,6 +22,8 @@ public data class MonitorData(
     override val weight: Weight,
     override val size: Size,
     override val manufacturer: Manufacturer,
+    override val imageUri: String?,
+    override val isFavorite: Boolean,
     override val aspectRatio: MonitorAspectRatio,
     override val contrastRatio: MonitorContrastRatio,
     override val refreshRate: MonitorRefreshRate,
@@ -30,4 +34,4 @@ public data class MonitorData(
     override val pwmType: MonitorPWMType,
     override val resolution: MonitorResolution,
     override val screenType: MonitorScreenType,
-) : Monitor
+) : PolymorphicComponent(), Monitor
