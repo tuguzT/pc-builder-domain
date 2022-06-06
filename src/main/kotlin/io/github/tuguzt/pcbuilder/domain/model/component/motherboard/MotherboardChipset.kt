@@ -1,16 +1,17 @@
 package io.github.tuguzt.pcbuilder.domain.model.component.motherboard
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 /**
  * Chipset type of the [motherboard][Motherboard].
  */
-@Serializable
 public sealed interface MotherboardChipset {
     /**
      * AMD chipsets.
      */
     @Serializable
+    @SerialName("AMD")
     public enum class AMD : MotherboardChipset {
         AMD_690G,
         AMD_740G,
@@ -66,6 +67,7 @@ public sealed interface MotherboardChipset {
      */
     @Suppress("EnumEntryName")
     @Serializable
+    @SerialName("Intel")
     public enum class Intel : MotherboardChipset {
         Intel_3450,
         Intel_5520,
@@ -162,12 +164,12 @@ public sealed interface MotherboardChipset {
     /**
      * NVIDIA chipsets.
      */
-    @Serializable
     public sealed interface NVIDIA : MotherboardChipset {
         /**
          * GeForce series.
          */
         @Serializable
+        @SerialName("NVIDIA GeForce")
         public enum class GeForce : NVIDIA {
             GeForce6100,
             GeForce6150,
@@ -182,12 +184,14 @@ public sealed interface MotherboardChipset {
          * ION series.
          */
         @Serializable
+        @SerialName("NVIDIA ION")
         public object ION : NVIDIA
 
         /**
          * nForce series.
          */
         @Serializable
+        @SerialName("NVIDIA NForce")
         public enum class NForce : NVIDIA {
             NForce430MCP,
             NForce590SLIMCP,
@@ -206,6 +210,7 @@ public sealed interface MotherboardChipset {
      * VIA chipsets.
      */
     @Serializable
+    @SerialName("VIA")
     public enum class VIA : MotherboardChipset {
         P4M890,
     }
@@ -214,5 +219,6 @@ public sealed interface MotherboardChipset {
      * CPU integrated chipset.
      */
     @Serializable
+    @SerialName("CPUIntegrated")
     public object CPUIntegrated : MotherboardChipset
 }

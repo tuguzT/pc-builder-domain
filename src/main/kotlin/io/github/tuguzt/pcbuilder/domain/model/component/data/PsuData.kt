@@ -2,7 +2,6 @@ package io.github.tuguzt.pcbuilder.domain.model.component.data
 
 import io.github.tuguzt.pcbuilder.domain.interactor.randomNanoId
 import io.github.tuguzt.pcbuilder.domain.model.NanoId
-import io.github.tuguzt.pcbuilder.domain.model.component.Manufacturer
 import io.github.tuguzt.pcbuilder.domain.model.component.Size
 import io.github.tuguzt.pcbuilder.domain.model.component.Weight
 import io.github.tuguzt.pcbuilder.domain.model.component.psu.*
@@ -20,7 +19,7 @@ public data class PsuData(
     override val description: String,
     override val weight: Weight,
     override val size: Size,
-    override val manufacturer: Manufacturer,
+    override val manufacturer: ManufacturerData,
     override val imageUri: String?,
     override val isFavorite: Boolean,
     override val efficiencyRating: PsuEfficiencyRating?,

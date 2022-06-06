@@ -1,18 +1,19 @@
 package io.github.tuguzt.pcbuilder.domain.model.component.motherboard
 
 import io.github.tuguzt.pcbuilder.domain.model.component.cpu.CpuSocket
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 /**
  * CPU socket of the [motherboard][Motherboard].
  */
-@Serializable
 public sealed interface MotherboardCpuSocket {
     /**
      * Standard CPU socket types.
      */
     @Suppress("EnumEntryName")
     @Serializable
+    @SerialName("standard")
     public data class Standard(public val socket: CpuSocket) : MotherboardCpuSocket
 
     /**
@@ -20,6 +21,7 @@ public sealed interface MotherboardCpuSocket {
      */
     @Suppress("EnumEntryName")
     @Serializable
+    @SerialName("integrated")
     public enum class Integrated : MotherboardCpuSocket {
         A4_5000,
         AthlonII_X2_215,

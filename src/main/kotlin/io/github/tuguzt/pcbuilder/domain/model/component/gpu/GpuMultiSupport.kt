@@ -1,16 +1,17 @@
 package io.github.tuguzt.pcbuilder.domain.model.component.gpu
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 /**
  * [CrossFireX] or [SLI] support of the [graphics processing unit][GraphicsProcessingUnit].
  */
-@Serializable
 public sealed interface GpuMultiSupport {
     /**
      * `CrossFireX` is AMD’s multi-GPU solution.
      */
     @Serializable
+    @SerialName("CrossFireX")
     public data class CrossFireX(public val wayCount: WayCount) : GpuMultiSupport {
         /**
          * Count of GPUs to be supported by [CrossFireX].
@@ -27,6 +28,7 @@ public sealed interface GpuMultiSupport {
      * `Scalable Link Interface` (or [SLI]) is NVIDIA’s multi-GPU solution.
      */
     @Serializable
+    @SerialName("SLI")
     public data class SLI(public val wayCount: WayCount) : GpuMultiSupport {
         /**
          * Count of GPUs to be supported by [SLI].

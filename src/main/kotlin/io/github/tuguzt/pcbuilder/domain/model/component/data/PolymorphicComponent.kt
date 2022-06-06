@@ -7,4 +7,6 @@ import kotlinx.serialization.Serializable
  * Special class for polymorphic [component][Component] serialization out of the box.
  */
 @Serializable
-public sealed class PolymorphicComponent : Component
+public sealed class PolymorphicComponent : Component {
+    abstract override val manufacturer: ManufacturerData
+}

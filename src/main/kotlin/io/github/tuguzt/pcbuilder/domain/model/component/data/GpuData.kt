@@ -2,7 +2,6 @@ package io.github.tuguzt.pcbuilder.domain.model.component.data
 
 import io.github.tuguzt.pcbuilder.domain.interactor.randomNanoId
 import io.github.tuguzt.pcbuilder.domain.model.NanoId
-import io.github.tuguzt.pcbuilder.domain.model.component.Manufacturer
 import io.github.tuguzt.pcbuilder.domain.model.component.Size
 import io.github.tuguzt.pcbuilder.domain.model.component.ThermalDesignPower
 import io.github.tuguzt.pcbuilder.domain.model.component.Weight
@@ -21,11 +20,11 @@ public data class GpuData(
     override val description: String,
     override val weight: Weight,
     override val size: Size,
-    override val manufacturer: Manufacturer,
+    override val manufacturer: ManufacturerData,
     override val imageUri: String?,
     override val isFavorite: Boolean,
     override val `interface`: GpuInterface,
-    override val chipset: GpuChipset,
+    override val chipset: GpuChipsetData,
     override val coreClockRate: GpuClockRate,
     override val boostClockRate: GpuClockRate,
     override val memoryType: GpuMemoryType,

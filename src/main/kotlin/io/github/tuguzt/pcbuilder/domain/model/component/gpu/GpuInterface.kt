@@ -1,16 +1,17 @@
 package io.github.tuguzt.pcbuilder.domain.model.component.gpu
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 /**
  * Interface type of the [graphics processing unit][GraphicsProcessingUnit].
  */
-@Serializable
 public sealed interface GpuInterface {
     /**
      * AGP interface type.
      */
     @Serializable
+    @SerialName("AGP")
     public object AGP : GpuInterface {
         override fun toString(): String = "AGP"
     }
@@ -19,6 +20,7 @@ public sealed interface GpuInterface {
      * PCI interface type.
      */
     @Serializable
+    @SerialName("PCI")
     public object PCI : GpuInterface {
         override fun toString(): String = "PCI"
     }
@@ -28,6 +30,7 @@ public sealed interface GpuInterface {
      */
     @Suppress("EnumEntryName")
     @Serializable
+    @SerialName("PCIe")
     public enum class PCIe(public val lineCount: UByte) : GpuInterface {
         PCIe_x1(lineCount = 1u),
         PCIe_x2(lineCount = 2u),
