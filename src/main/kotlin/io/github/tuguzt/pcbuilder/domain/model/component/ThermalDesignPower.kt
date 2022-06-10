@@ -9,14 +9,14 @@
 
 package io.github.tuguzt.pcbuilder.domain.model.component
 
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.LengthSerializer
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.MassSerializer
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.MeasureSerializer
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.TimeSerializer
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.compound.UnitsProductSerializer
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.compound.UnitsRatioSerializer
 import io.github.tuguzt.pcbuilder.domain.model.component.cpu.CPU
 import io.github.tuguzt.pcbuilder.domain.model.component.gpu.GPU
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.LengthSerializer
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.MassSerializer
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.MeasureSerializer
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.TimeSerializer
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.compound.UnitsProductSerializer
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.compound.UnitsRatioSerializer
 import io.github.tuguzt.pcbuilder.domain.model.units.Power
 import io.nacular.measured.units.Measure
 import kotlinx.serialization.Serializable

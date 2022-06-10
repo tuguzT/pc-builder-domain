@@ -1,12 +1,12 @@
 package io.github.tuguzt.pcbuilder.domain.model.component.data
 
-import io.github.tuguzt.pcbuilder.domain.interactor.randomNanoId
 import io.github.tuguzt.pcbuilder.domain.model.NanoId
 import io.github.tuguzt.pcbuilder.domain.model.component.Size
 import io.github.tuguzt.pcbuilder.domain.model.component.ThermalDesignPower
 import io.github.tuguzt.pcbuilder.domain.model.component.Weight
 import io.github.tuguzt.pcbuilder.domain.model.component.cpu.*
 import io.github.tuguzt.pcbuilder.domain.model.component.memory.MemoryECCType
+import io.github.tuguzt.pcbuilder.domain.randomNanoId
 import kotlinx.serialization.EncodeDefault
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.SerialName

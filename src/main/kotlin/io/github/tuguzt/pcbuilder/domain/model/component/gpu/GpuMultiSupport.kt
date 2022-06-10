@@ -1,5 +1,7 @@
 package io.github.tuguzt.pcbuilder.domain.model.component.gpu
 
+import io.github.tuguzt.pcbuilder.domain.model.component.gpu.GpuMultiSupport.CrossFireX
+import io.github.tuguzt.pcbuilder.domain.model.component.gpu.GpuMultiSupport.SLI
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

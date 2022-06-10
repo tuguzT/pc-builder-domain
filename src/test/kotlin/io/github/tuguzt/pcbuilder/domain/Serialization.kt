@@ -1,7 +1,5 @@
 package io.github.tuguzt.pcbuilder.domain
 
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.json
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.serializersModule
 import io.github.tuguzt.pcbuilder.domain.model.component.Size
 import io.github.tuguzt.pcbuilder.domain.model.component.ThermalDesignPower
 import io.github.tuguzt.pcbuilder.domain.model.component.Weight
@@ -12,6 +10,8 @@ import io.github.tuguzt.pcbuilder.domain.model.component.cases.CaseType
 import io.github.tuguzt.pcbuilder.domain.model.component.data.*
 import io.github.tuguzt.pcbuilder.domain.model.component.gpu.*
 import io.github.tuguzt.pcbuilder.domain.model.component.motherboard.MotherboardChipset
+import io.github.tuguzt.pcbuilder.domain.model.serialization.json
+import io.github.tuguzt.pcbuilder.domain.model.serialization.serializersModule
 import io.github.tuguzt.pcbuilder.domain.model.units.hertz
 import io.github.tuguzt.pcbuilder.domain.model.units.watt
 import io.nacular.measured.units.Angle.Companion.radians

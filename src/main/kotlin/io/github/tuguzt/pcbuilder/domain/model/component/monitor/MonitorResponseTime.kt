@@ -2,8 +2,8 @@
 
 package io.github.tuguzt.pcbuilder.domain.model.component.monitor
 
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.MeasureSerializer
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.TimeSerializer
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.MeasureSerializer
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.TimeSerializer
 import io.nacular.measured.units.Measure
 import io.nacular.measured.units.Time
 import kotlinx.serialization.Serializable

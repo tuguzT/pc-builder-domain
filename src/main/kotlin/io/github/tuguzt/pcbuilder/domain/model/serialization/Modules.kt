@@ -1,15 +1,15 @@
-package io.github.tuguzt.pcbuilder.domain.interactor.serialization
+package io.github.tuguzt.pcbuilder.domain.model.serialization
 
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.*
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.compound.InverseUnitsSerializer
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.compound.UnitsProductSerializer
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.compound.UnitsRatioSerializer
 import io.github.tuguzt.pcbuilder.domain.model.component.cases.CaseType
 import io.github.tuguzt.pcbuilder.domain.model.component.data.*
 import io.github.tuguzt.pcbuilder.domain.model.component.gpu.GpuInterface
 import io.github.tuguzt.pcbuilder.domain.model.component.gpu.GpuMultiSupport
 import io.github.tuguzt.pcbuilder.domain.model.component.motherboard.MotherboardChipset
 import io.github.tuguzt.pcbuilder.domain.model.component.motherboard.MotherboardCpuSocket
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.*
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.compound.InverseUnitsSerializer
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.compound.UnitsProductSerializer
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.compound.UnitsRatioSerializer
 import io.nacular.measured.units.Measure
 import io.nacular.measured.units.Units
 import kotlinx.serialization.PolymorphicSerializer

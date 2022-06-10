@@ -1,4 +1,4 @@
-package io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.compound
+package io.github.tuguzt.pcbuilder.domain.model.serialization.measured.compound
 
 import io.nacular.measured.units.InverseUnits
 import io.nacular.measured.units.Units

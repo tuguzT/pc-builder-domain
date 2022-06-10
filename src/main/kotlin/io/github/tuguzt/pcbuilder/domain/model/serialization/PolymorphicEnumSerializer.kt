@@ -1,4 +1,4 @@
-package io.github.tuguzt.pcbuilder.domain.interactor.serialization
+package io.github.tuguzt.pcbuilder.domain.model.serialization
 
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.KSerializer

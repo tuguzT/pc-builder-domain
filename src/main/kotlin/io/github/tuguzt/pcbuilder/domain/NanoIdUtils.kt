@@ -1,4 +1,4 @@
-package io.github.tuguzt.pcbuilder.domain.interactor
+package io.github.tuguzt.pcbuilder.domain
 
 import com.aventrix.jnanoid.jnanoid.NanoIdUtils
 import io.github.tuguzt.pcbuilder.domain.model.NanoId

@@ -2,8 +2,8 @@
 
 package io.github.tuguzt.pcbuilder.domain.model.component
 
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.LengthSerializer
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.MeasureSerializer
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.LengthSerializer
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.MeasureSerializer
 import io.nacular.measured.units.Length
 import io.nacular.measured.units.Measure
 import kotlinx.serialization.Serializable

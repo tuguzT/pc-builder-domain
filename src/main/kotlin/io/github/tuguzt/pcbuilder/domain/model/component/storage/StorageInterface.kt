@@ -7,10 +7,10 @@
 
 package io.github.tuguzt.pcbuilder.domain.model.component.storage
 
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.BinarySizeSerializer
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.MeasureSerializer
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.TimeSerializer
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.compound.UnitsRatioSerializer
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.BinarySizeSerializer
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.MeasureSerializer
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.TimeSerializer
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.compound.UnitsRatioSerializer
 import io.nacular.measured.units.BinarySize.Companion.gigabits
 import io.nacular.measured.units.Measure
 import io.nacular.measured.units.Time.Companion.seconds

@@ -1,4 +1,4 @@
-package io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured
+package io.github.tuguzt.pcbuilder.domain.model.serialization.measured
 
 import io.nacular.measured.units.GraphicsLength
 

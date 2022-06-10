@@ -1,8 +1,8 @@
 package io.github.tuguzt.pcbuilder.domain.model.build
 
-import io.github.tuguzt.pcbuilder.domain.interactor.randomNanoId
 import io.github.tuguzt.pcbuilder.domain.model.NanoId
 import io.github.tuguzt.pcbuilder.domain.model.component.data.*
+import io.github.tuguzt.pcbuilder.domain.randomNanoId
 import kotlinx.serialization.EncodeDefault
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.Serializable

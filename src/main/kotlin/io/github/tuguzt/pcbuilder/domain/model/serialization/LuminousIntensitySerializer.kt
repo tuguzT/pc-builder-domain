@@ -1,6 +1,6 @@
-package io.github.tuguzt.pcbuilder.domain.interactor.serialization
+package io.github.tuguzt.pcbuilder.domain.model.serialization
 
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.measured.UnitsBaseSerializer
+import io.github.tuguzt.pcbuilder.domain.model.serialization.measured.UnitsBaseSerializer
 import io.github.tuguzt.pcbuilder.domain.model.units.LuminousIntensity
 
 /**

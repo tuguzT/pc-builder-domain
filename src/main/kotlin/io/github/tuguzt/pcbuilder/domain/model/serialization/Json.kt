@@ -1,7 +1,7 @@
-package io.github.tuguzt.pcbuilder.domain.interactor.serialization
+package io.github.tuguzt.pcbuilder.domain.model.serialization
 
 import kotlinx.serialization.json.Json
-import io.github.tuguzt.pcbuilder.domain.interactor.serialization.serializersModule as mySerializersModule
+import io.github.tuguzt.pcbuilder.domain.model.serialization.serializersModule as mySerializersModule
 
 /**
  * Default [Json] configuration of the application.
