@@ -14,7 +14,7 @@ public class CheckUsernameUseCase : (String) -> Boolean {
      * - `-`, `_`, `.` characters can't be next to each other
      * - `-`, `_`, `.` characters can't be used multiple times in a row
      */
-    public override operator fun invoke(username: String): Boolean = usernameRegex matches username
+    override operator fun invoke(username: String): Boolean = usernameRegex matches username
 }
 
 /**

@@ -14,7 +14,7 @@ public class CheckPasswordUseCase : (String) -> Boolean {
      * - must contain at least one digit
      * - must contain at least one special character: `(`, `)`, `#`, `?`, `!`, `@`, `$`, `%`, `^`, `&`, `*`, `_`, or `-`
      */
-    override fun invoke(password: String): Boolean = passwordRegex matches password
+    override operator fun invoke(password: String): Boolean = passwordRegex matches password
 }
 
 /**
