@@ -9,58 +9,64 @@ import kotlin.contracts.contract
 /**
  * Represents result of some operation: either [success][Success] or [error][Error].
  */
-public sealed interface Result<S, E> {
+public sealed class Result<Success, Error> {
     /**
-     * Successful result with [data].
+     * Successful result with [data] inside.
      */
-    public data class Success<S, E> internal constructor(public val data: S) : Result<S, E>
+    public data class Success<Success, Error>(val data: Success) : Result<Success, Error>()
 
     /**
-     * Error result with [error] and [throwable], if present.
+     * Error result with [error] and [cause], if present.
      */
-    public data class Error<S, E> internal constructor(
-        public val error: E,
-        public val throwable: Throwable?,
-    ) : Result<S, E>
+    public data class Error<Success, Error>(val error: Error, val cause: Throwable?) : Result<Success, Error>()
 }
 
 /**
- * Retrieves data from the result, if it was successful, otherwise returns `null`.
+ * Retrieves data from the result if it was successful, otherwise returns `null`.
  */
-public fun <S, E> Result<S, E>.getOrNull(): S? = when (this) {
-    is Error -> null
-    is Success -> data
+public fun <Success, Error> Result<Success, Error>.getOrNull(): Success? = when (this) {
+    is Result.Error -> null
+    is Result.Success -> data
 }
 
 /**
- * Retrieves error from the result, if it was not successful, otherwise returns `null`.
+ * Retrieves error from the result if it was not successful, otherwise returns `null`.
  */
-public fun <S, E> Result<S, E>.errorOrNull(): E? = when (this) {
-    is Error -> error
-    is Success -> null
+public fun <Success, Error> Result<Success, Error>.errorOrNull(): Error? = when (this) {
+    is Result.Error -> error
+    is Result.Success -> null
+}
+
+/**
+ * Retrieves throwable from the result if it was not successful, otherwise returns `null`.
+ */
+public fun <Success, Error> Result<Success, Error>.causeOrNull(): Throwable? = when (this) {
+    is Result.Error -> cause
+    is Result.Success -> null
 }
 
 /**
  * Make successful result from the [data].
  */
-public fun <S, E> success(data: S): Success<S, E> = Success(data)
+public fun <Success, Error> success(data: Success): Result.Success<Success, Error> = Success(data)
 
 /**
- * Make error result from the [error] and [throwable], if any.
+ * Make error result from the [error] and [cause], if any.
  */
-public fun <S, E> error(error: E, throwable: Throwable? = null): Error<S, E> = Error(error, throwable)
+public fun <Success, Error> error(error: Error, cause: Throwable? = null): Result.Error<Success, Error> =
+    Error(error, cause)
 
 /**
  * Maps result to the new result with another success type.
  */
 @OptIn(ExperimentalContracts::class)
-public fun <S, E, N> Result<S, E>.mapSuccess(transform: (S) -> N): Result<N, E> {
+public fun <Success, Error, NewSuccess> Result<Success, Error>.mapSuccess(transform: (Success) -> NewSuccess): Result<NewSuccess, Error> {
     contract {
         callsInPlace(transform, InvocationKind.AT_MOST_ONCE)
     }
     return when (this) {
-        is Error -> cast()
-        is Success -> map(transform)
+        is Result.Error -> cast()
+        is Result.Success -> map(transform)
     }
 }
 
@@ -68,13 +74,13 @@ public fun <S, E, N> Result<S, E>.mapSuccess(transform: (S) -> N): Result<N, E> 
  * Maps result to the new result with another error type.
  */
 @OptIn(ExperimentalContracts::class)
-public fun <S, E, N> Result<S, E>.mapError(transform: (E) -> N): Result<S, N> {
+public fun <Success, Error, NewError> Result<Success, Error>.mapError(transform: (Error) -> NewError): Result<Success, NewError> {
     contract {
         callsInPlace(transform, InvocationKind.AT_MOST_ONCE)
     }
     return when (this) {
-        is Error -> map(transform)
-        is Success -> cast()
+        is Result.Error -> map(transform)
+        is Result.Success -> cast()
     }
 }
 
@@ -82,7 +88,7 @@ public fun <S, E, N> Result<S, E>.mapError(transform: (E) -> N): Result<S, N> {
  * Maps successful result to the new successful result with another success type.
  */
 @OptIn(ExperimentalContracts::class)
-public fun <S, E, N> Success<S, E>.map(transform: (S) -> N): Success<N, E> {
+public fun <Success, Error, NewSuccess> Result.Success<Success, Error>.map(transform: (Success) -> NewSuccess): Result.Success<NewSuccess, Error> {
     contract {
         callsInPlace(transform, InvocationKind.EXACTLY_ONCE)
     }
@@ -93,33 +99,33 @@ public fun <S, E, N> Success<S, E>.map(transform: (S) -> N): Success<N, E> {
  * Maps error result to the new error result with another error type.
  */
 @OptIn(ExperimentalContracts::class)
-public fun <S, E, N> Error<S, E>.map(transform: (E) -> N): Error<S, N> {
+public fun <Success, Error, NewError> Result.Error<Success, Error>.map(transform: (Error) -> NewError): Result.Error<Success, NewError> {
     contract {
         callsInPlace(transform, InvocationKind.EXACTLY_ONCE)
     }
-    return Error(error = transform(error), throwable)
+    return Error(error = transform(error), cause)
 }
 
 /**
- * Casts successful result to the new result of another error type.
+ * Casts successful result to the new result of another error type which is safe.
  */
-public fun <S, E, N> Success<S, E>.cast(): Success<S, N> {
+public fun <Success, Error, NewError> Result.Success<Success, Error>.cast(): Result.Success<Success, NewError> {
     @Suppress("UNCHECKED_CAST")
-    return this as Success<S, N>
+    return this as Result.Success<Success, NewError>
 }
 
 /**
- * Casts error result to the new result of another success type.
+ * Casts error result to the new result of another success type which is safe.
  */
-public fun <S, E, N> Error<S, E>.cast(): Error<N, E> {
+public fun <Success, Error, NewSuccess> Result.Error<Success, Error>.cast(): Result.Error<NewSuccess, Error> {
     @Suppress("UNCHECKED_CAST")
-    return this as Error<N, E>
+    return this as Result.Error<NewSuccess, Error>
 }
 
 /**
  * Converts [kotlin.Result] to the [Result] object.
  */
-public fun <S, E> kotlin.Result<S>.toResult(): Result<S, E?> = when (val data = getOrNull()) {
-    null -> Error(error = null, throwable = exceptionOrNull())
+public fun <Success, Error> kotlin.Result<Success>.toResult(): Result<Success, Error?> = when (val data = getOrNull()) {
+    null -> Error(error = null, cause = exceptionOrNull())
     else -> Success(data)
 }

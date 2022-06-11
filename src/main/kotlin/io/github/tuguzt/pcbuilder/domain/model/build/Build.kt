@@ -15,12 +15,14 @@ import io.github.tuguzt.pcbuilder.domain.model.component.motherboard.Motherboard
 import io.github.tuguzt.pcbuilder.domain.model.component.psu.PSU
 import io.github.tuguzt.pcbuilder.domain.model.component.psu.PowerSupplyUnit
 import io.github.tuguzt.pcbuilder.domain.model.component.storage.Storage
+import io.github.tuguzt.pcbuilder.domain.model.user.User
 
 /**
  * Stores information about custom PC build which consists of [components][Component].
  */
 public interface Build : Identifiable<NanoId> {
     public val name: String
+    public val user: User
     public val case: Case?
     public val cooler: Cooler?
     public val centralProcessingUnit: CentralProcessingUnit?
