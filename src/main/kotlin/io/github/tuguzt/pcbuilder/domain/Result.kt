@@ -125,7 +125,8 @@ public fun <Success, Error, NewSuccess> Result.Error<Success, Error>.cast(): Res
 /**
  * Converts [kotlin.Result] to the [Result] object.
  */
-public fun <Success, Error> kotlin.Result<Success>.toResult(): Result<Success, Error?> = when (val data = getOrNull()) {
-    null -> Error(error = null, cause = exceptionOrNull())
-    else -> Success(data)
-}
+public fun <Success, Error> kotlin.Result<Success>.toResult(): Result<Success?, Error?> =
+    when (val cause = exceptionOrNull()) {
+        null -> Success(data = getOrNull())
+        else -> Error(error = null, cause = cause)
+    }
