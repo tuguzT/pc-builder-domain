@@ -14,7 +14,7 @@ public sealed interface GpuMultiSupport {
      */
     @Serializable
     @SerialName("CrossFireX")
-    public data class CrossFireX(public val wayCount: WayCount)
+    public data class CrossFireX(public val wayCount: WayCount) : GpuMultiSupport
 
     /**
      * `Scalable Link Interface` (or [SLI]) is NVIDIA’s multi-GPU solution.
