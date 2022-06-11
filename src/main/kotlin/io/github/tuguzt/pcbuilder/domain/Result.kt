@@ -130,3 +130,13 @@ public fun <Success, Error> kotlin.Result<Success>.toResult(): Result<Success?, 
         null -> Success(data = getOrNull())
         else -> Error(error = null, cause = cause)
     }
+
+/**
+ * Converts [kotlin.Result] to the [Result] object.
+ */
+@JvmName("toResultOrThrow")
+public fun <Success : Any, Error> kotlin.Result<Success>.toResult(): Result<Success, Error?> =
+    when (val cause = exceptionOrNull()) {
+        null -> Success(data = getOrThrow())
+        else -> Error(error = null, cause = cause)
+    }
