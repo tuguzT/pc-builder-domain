@@ -8,6 +8,8 @@ import kotlinx.serialization.Serializable
  */
 @JvmInline
 @Serializable
-public value class NanoId(private val value: String) {
+public value class NanoId(private val value: String) : Comparable<NanoId> {
+    override fun compareTo(other: NanoId): Int = value.compareTo(other.value)
+
     override fun toString(): String = value
 }
